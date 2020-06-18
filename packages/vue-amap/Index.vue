@@ -4,29 +4,27 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
+  import { AMap, Map } from '../../index'
 
   @Component
   export default class VueAmap extends Vue {
-    /**
-     * @see https://lbs.amap.com/api/javascript-api/reference/map
-     */
-    map: any
-    AMap: any
+    map!: Map
+    amap!: AMap
     @Prop({ type: String, default: '500px' }) private width!: string
     @Prop({ type: String, default: '500px' }) private height!: string
     @Prop({ type: [Object] }) private config!: object
 
     mounted () {
-      this.$amapLoader().then((AMap) => {
-        this.AMap = AMap
+      this.$amapLoader().then((amap) => {
+        this.amap = amap
         this._initMap()
       })
     }
 
     _initMap () {
       // @see https://lbs.amap.com/api/javascript-api/reference/overlay#MarkerOptions
-      const { AMap } = this
-      this.map = new AMap.Map(this.$refs.container)
+      const { amap } = this
+      this.map = new amap.Map(this.$refs.container)
       this.map.on('complete', () => {
         this.$emit('complete', this.map)
       })

@@ -1,13 +1,10 @@
 import VueAmap from './vue-amap'
-import Vue, { PluginObject, VueConstructor } from 'vue'
-import { AmapConfig } from '../index'
+import Vue, { VueConstructor } from 'vue'
+import { AMapLoaderOptions } from '../index'
 import AMapLoader from '@amap/amap-jsapi-loader'
 
-(VueAmap as unknown as PluginObject<typeof Vue>).install = (
-  Vue1) => {
-  Vue1.component(VueAmap.name, VueAmap)
-}
-const install: any = ((Vue1: VueConstructor<Vue>, options: AmapConfig) => {
+const install: any = ((
+  Vue1: VueConstructor<Vue>, options: AMapLoaderOptions) => {
   Vue1.prototype.$amapLoader = () => AMapLoader.load(options)
 })
 
