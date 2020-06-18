@@ -25,6 +25,7 @@
     "semicolon": false,
     "member-access": false,
     "space-before-function-paren": true,
-    "no-console": false
+    "no-console": false,
+    "no-unused-expression": false
   }
 }
