@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@amap/amap-jsapi-loader@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@amap/amap-jsapi-loader/-/amap-jsapi-loader-0.0.1.tgz#c35d60f057b7fc429fc7a60e5acecbedd556cb15"
+  integrity sha512-aN+Qadd9sHCUswxhyJUqUf+knCGZCuQ+L3nqTlSaDHZthi9ifpeNoCwlSCuTRvOEArZkuDcSVVk+mXvtPiI4zA==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.1":
   version "7.10.1"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.10.1.tgz?cache=0&sync_timestamp=1590617298858&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.10.1.tgz#d5481c5095daa1c57e16e54c6f9198443afb49ff"
@@ -917,6 +922,11 @@
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/@soda/get-current-script/download/@soda/get-current-script-1.0.2.tgz?cache=0&sync_timestamp=1592273074614&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40soda%2Fget-current-script%2Fdownload%2F%40soda%2Fget-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha1-pTUV2yXYA4N0OBtzryC7Ty5QjYc=
+
+"@types/amap-js-api@^1.4.8":
+  version "1.4.8"
+  resolved "https://registry.npmjs.org/@types/amap-js-api/-/amap-js-api-1.4.8.tgz#64a16fe9904b2907f800f2cf764ce3c6f878ddab"
+  integrity sha512-942O+waCI7eeA4oCTiHWJTUqX2mIOdzKxQvElR/Nef2MUQWE135W3HOjTAZ7Er1sPw2MnsFLJnyY8dfA8NW8IA==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
