@@ -16,13 +16,8 @@
   import { GeolocationOptions } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
 
-  console.log('vueAmap======================')
-  console.log(VueAmap) // todo
-  console.log('======================')
-
-  Vue.use(VueAmap)
   @Component({
-    components: { DemoBlock },
+    components: { DemoBlock, VueAmap },
   })
   export default class GetPositionDemo extends Vue {
     geolocationOptions1: GeolocationOptions = {

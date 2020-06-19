@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <demo-block>
     <vue-amap></vue-amap>
-  </div>
+  </demo-block>
 </template>
 
 

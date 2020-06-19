@@ -26,12 +26,10 @@ Vue.use(VueAmapLoader, {
 </template>
 
 <script>
-  import Vue from 'vue'
   import { VueAmap } from '@vita2333/vue-amap2.0'
 
-  Vue.use(VueAmap)
   export default {
-
+     components:{ VueAmap }
   }
 </script>
 ```
