@@ -24,8 +24,8 @@ export const demos: RouteConfig[] = [
     meta: { title: '定位' },
   },
   {
-    path: '/MapControlDemo.vue',
-    name: 'MapControlDemo.vue',
+    path: '/MapControlDemo',
+    name: 'MapControlDemo',
     component: () => import(/* webpackChunkName: "demo" */ '../views/MapControlDemo.vue'),
     meta: { title: '地图控件' },
   },

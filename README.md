@@ -33,3 +33,6 @@ Vue.use(VueAmapLoader, {
   }
 </script>
 ```
+
+### Demo
+[https://vita2333.github.io/vue-amap2.0](https://vita2333.github.io/vue-amap2.0/#/)
