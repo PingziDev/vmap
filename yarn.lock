@@ -966,10 +966,10 @@
   resolved "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.15.2.tgz#927997342bb9f4a5185a86e6579a0a18afc33b0a"
   integrity sha512-67ZgZpAlhIICIdfQrB5fnDvaKFcDxpKibxznfYRVAT4mQE41Dido/3Ty+E3xGBmTogc5+0Qb8tWhna+5B8z1iQ==
 
-"@vita2333/vue-amap2.0@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.8.tgz#f067ced097f850246c70250419f509891ac7d38c"
-  integrity sha512-QrmSUL97lxPhuNrv2oirU9CrwEaHWV5X+S9+YQtvK/6qX6L4oCNf9ly/tPOD9FmTcV6gBTnZPoD3QheNLf/IBQ==
+"@vita2333/vue-amap2.0@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.11.tgz#a15d0b2d7e72dfc923a0bc6773686dfc8950a6a6"
+  integrity sha512-D1N+vZTmfuOrLu5P+F238lBWHZvhANtsNyFWhV8kT3AXKSiQh4lU4q+6+6DpU7OfwM8dLxV82puJAGhxHpqQ/A==
   dependencies:
     "@amap/amap-jsapi-loader" "^0.0.1"
     core-js "^3.6.5"
