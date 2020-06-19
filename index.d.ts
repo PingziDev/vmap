@@ -16,17 +16,33 @@ export interface AMapLoaderOptions {
 /**
  * @link https://lbs.amap.com/api/jsapi-v2/documentation
  */
-export interface AMap {
+export interface AMap extends Options {
   Map: new (
     div: string | Vue | Element | Vue[] | Element[],
     options?: MapOptions) => Map
+  Geolocation: new(options?: GeolocationOptions) => Geolocation
 
+}
+
+export interface Options {
   [x: string]: any
 }
 
+export interface GeolocationOptions extends Options {
+}
+
+export interface Geolocation {
+  getCurrentPosition (
+    callback: any): void;
+
+  getCityInfo (
+    callback: any): void;
+}
+
 export interface Map {
-  setCenter: () => void // todo 完善类型
-  destroy: () => void
+  destroy (): void
+
+  setCenter (center: number[], immediately?: boolean, duration?: number): void
 
   [x: string]: any
 }

@@ -4,15 +4,16 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
-  import { AMap, Map } from '../../index'
+  import { AMap, GeolocationOptions, Map, MapOptions } from '../../index'
 
   @Component
   export default class VueAmap extends Vue {
     map!: Map
     amap!: AMap
-    @Prop({ type: String, default: '500px' }) private width!: string
-    @Prop({ type: String, default: '500px' }) private height!: string
-    @Prop({ type: [Object] }) private config!: object
+    @Prop({ type: String, default: '500px' }) readonly width!: string
+    @Prop({ type: String, default: '500px' }) readonly height!: string
+    @Prop({ type: Object }) readonly config!: MapOptions
+    @Prop({ type: Object }) readonly geolocationOptions!: GeolocationOptions
 
     mounted () {
       this.$amapLoader().then((amap) => {
@@ -23,47 +24,51 @@
 
     _initMap () {
       // @see https://lbs.amap.com/api/javascript-api/reference/overlay#MarkerOptions
-      const { amap } = this
-      this.map = new amap.Map(this.$refs.container)
+      const { amap, geolocationOptions } = this
+      this.map = new amap.Map(this.$refs.container, this.config)
+      geolocationOptions && this.getCurrentPosition()
+
       this.map.on('complete', () => {
         this.$emit('complete', this.map)
       })
-      // this.getCurrentPosition()
     }
 
-    public getMap () {
+    getMap () {
       if (!this.map) {
         throw new Error('地图未完成加载')
       }
       return this.map
     }
 
-    // public getCurrentPosition () {
-    //   const { map, AMap } = this
-    //   AMap.plugin('AMap.Geolocation', function () {
-    //     const geolocation = new AMap.Geolocation()
-    //
-    //     map.addControl(geolocation)
-    //
-    //     geolocation.getCurrentPosition(function (status, result) {
-    //       if (status == 'complete') {
-    //         onComplete(result)
-    //       } else {
-    //         onError(result)
-    //       }
-    //     })
-    //
-    //     function onComplete (data) {
-    //       // data是具体的定位信息
-    //
-    //     }
-    //
-    //     function onError (data) {
-    //       // 定位出错
-    //       throw data
-    //     }
-    //   })
-    // }
+    getCurrentPosition () {
+      const { map, amap, geolocationOptions } = this
+      amap.plugin('AMap.Geolocation', () => {
+        const geolocation = new amap.Geolocation(geolocationOptions)
+
+        map.addControl(geolocation)
+
+        geolocation.getCurrentPosition((status: string, result: any) => {
+          if (status === 'complete') {
+            onComplete(result)
+          } else {
+            onError(result)
+          }
+        })
+
+        function onComplete (data: any) {
+          // data是具体的定位信息
+          console.log('data======================')
+          console.log(data) // todo
+          console.log('======================')
+
+        }
+
+        function onError (data: any) {
+          // 定位出错
+          throw data
+        }
+      })
+    }
 
     destroyed () {
       this.map && this.map.destroy()

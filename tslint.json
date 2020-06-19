@@ -26,6 +26,8 @@
     "member-access": false,
     "space-before-function-paren": true,
     "no-console": false,
-    "no-unused-expression": false
+    "no-unused-expression": false,
+    "whitespace": false,
+    "no-empty-interface": false
   }
 }
