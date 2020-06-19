@@ -1,6 +1,6 @@
 <template>
 	<div class="demo-block">
-		<p class="demo-block--title">{{ $route.meta.title }}</p>
+		<p class="demo-block--title">{{ title }} <a :href="doc" target="_blank" v-if="doc">(文档)</a></p>
 		<slot></slot>
 	</div>
 </template>
@@ -8,6 +8,7 @@
 <script>
   export default {
     name: 'DemoBlock',
+    props: ['title', 'doc'],
   }
 </script>
 

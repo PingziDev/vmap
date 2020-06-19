@@ -37,4 +37,15 @@
       }
     }
   }
+
+  pre {
+    background-color: #f2f2f2;
+    padding: 15px;
+    overflow-x: scroll;
+  }
+
+  a {
+    color: dodgerblue;
+    text-decoration: none;
+  }
 </style>
