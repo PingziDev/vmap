@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueAmapLoader from '../packages'
+// import VueAmapLoader from '../VueAmappackages'
+import VueAmapLoader from '@vita2333/vue-amap2.0'
 import { AMapConfig } from '../amap.config.js'
 
 Vue.config.productionTip = false

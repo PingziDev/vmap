@@ -1,41 +1,31 @@
 <template>
-  <demo-block>
-    <vue-amap @complete="onComplete" ref="amap"></vue-amap>
-    <div v-if="map">
-      <button @click="zoomIn">放大</button>
-      <button @click="zoomOut">缩小</button>
-    </div>
+<div>
+  <demo-block doc="https://lbs.amap.com/api/jsapi-v2/example/mapbar/toolbar-litestyle" title="简易缩放按钮
+">
+    <vue-amap @complete="onComplete1" ref="amap1"></vue-amap>
   </demo-block>
+</div>
 </template>
-
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
   import { VueAmap } from '../../packages'
+  // import { VueAmap } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
+  import { Map, AMap } from '../../types'
 
   Vue.use(VueAmap)
   @Component({
     components: { DemoBlock },
   })
   export default class MapControlDemo extends Vue {
-    map: any = null
-
-    onComplete (map: any) {
-      this.map = map
+    onComplete1 (map: Map, amap: AMap) {
+      map.plugin(['AMap.ToolBar'], () => {
+        // 加载工具条
+        const tool = new amap.ToolBar()
+        map.addControl(tool)
+      })
     }
-
-    zoomIn () {
-      const map = (this.$refs.amap as any).getMap()
-      const room = map.getZoom()
-      map.setZoom(room + 1)
-    }
-
-    zoomOut () {
-      const room = this.map.getZoom()
-      this.map.setZoom(room - 1)
-    }
-
   }
 </script>
 

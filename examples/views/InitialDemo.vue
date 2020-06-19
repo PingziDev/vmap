@@ -10,7 +10,7 @@
   import { Component, Vue } from 'vue-property-decorator'
   import { VueAmap } from '../../packages'
   import DemoBlock from '@/components/DemoBlock.vue'
-  import { MapOptions } from '../../index'
+  import { MapOptions } from '../../types'
 
   Vue.use(VueAmap)
   @Component({

@@ -4,7 +4,7 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
-  import { AMap, GeolocationOptions, Map, MapOptions } from '../../index'
+  import { AMap, GeolocationOptions, Map, MapOptions } from '../../types'
 
   @Component
   export default class VueAmap extends Vue {
@@ -29,7 +29,7 @@
       geolocationOptions && this.getCurrentPosition()
 
       this.map.on('complete', () => {
-        this.$emit('complete', this.map)
+        this.$emit('complete', this.map, this.amap)
       })
     }
 

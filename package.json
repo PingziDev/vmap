@@ -1,13 +1,17 @@
 {
-  "name": "vue-amap2.0",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@vita2333/vue-amap2.0",
+  "version": "0.1.1",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:libs": "node ./build/build-libs.js"
   },
+  "types": "types/index.d.ts",
   "dependencies": {
+    "@vita2333/vue-amap2.0": "^0.1.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -23,6 +27,7 @@
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "lint-staged": "^9.5.0",
+    "runjs": "^4.4.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",

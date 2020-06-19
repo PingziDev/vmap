@@ -1,6 +1,6 @@
 import VueAmap from './vue-amap'
 import Vue, { VueConstructor } from 'vue'
-import { AMapLoaderOptions } from '../index'
+import { AMapLoaderOptions } from '../types'
 import AMapLoader from '@amap/amap-jsapi-loader'
 
 const install: any = ((

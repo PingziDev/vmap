@@ -1,5 +1,14 @@
 import Vue from 'vue'
 
+import { VueAmap } from './vue-amap'
+import { UIComponent } from './component'
+
+export {
+  VueAmap,
+}
+
+export default UIComponent
+
 declare module 'vue/types/vue' {
   interface Vue {
     $amapLoader: () => Promise<AMap>

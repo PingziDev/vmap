@@ -14,7 +14,7 @@
   import { Component, Vue } from 'vue-property-decorator'
   import { VueAmap } from '../../packages'
   import DemoBlock from '@/components/DemoBlock.vue'
-  import { GeolocationOptions } from '../../index'
+  import { GeolocationOptions } from '../../types'
 
   Vue.use(VueAmap)
   @Component({
@@ -39,7 +39,8 @@
           showMarker: true, // 是否显示定位点
           markerOptions: { // 自定义定位点样式，同Marker的Options
             offset: new AMap.Pixel(-18, -36),
-            content: '<img src="https: // a.amap.com/jsapi_demos/static/resource/img/user.png" style="width:36px;height:36px"/>',
+            content:
+              '<img alt="icon" src="https://a.amap.com/jsapi_demos/static/resource/img/user.png" style="width:36px;height:36px"/>',
           },
           showCircle: true, // 是否显示定位精度圈
           circleOptions: { // 定位精度圈的样式
