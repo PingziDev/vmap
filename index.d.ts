@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 declare module 'vue/types/vue' {
   interface Vue {
     $amapLoader: () => Promise<AMap>

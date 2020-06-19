@@ -1,16 +1,18 @@
 <template>
   <demo-block>
-    加载AMapLoader,不加载地图
-    <pre style="background-color: #f2f2f2;padding: 15px;">
-      AMapLoader=====
-      {{ $amapLoader }}
-    </pre>
+    <vue-amap></vue-amap>
   </demo-block>
 </template>
+
+
 <script>
+  import Vue from 'vue'
+  import { VueAmap } from '../../packages'
   import DemoBlock from '@/components/DemoBlock'
 
+  Vue.use(VueAmap)
   export default {
+    name: 'BaseDemo',
     components: { DemoBlock },
   }
 </script>
