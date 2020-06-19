@@ -12,7 +12,7 @@
     amap!: AMap
     @Prop({ type: String, default: '500px' }) readonly width!: string
     @Prop({ type: String, default: '500px' }) readonly height!: string
-    @Prop({ type: Object }) readonly config!: MapOptions
+    @Prop({ type: Object }) readonly mapOptions!: MapOptions
     @Prop({ type: Object }) readonly geolocationOptions!: GeolocationOptions
 
     mounted () {
@@ -25,7 +25,7 @@
     _initMap () {
       // @see https://lbs.amap.com/api/javascript-api/reference/overlay#MarkerOptions
       const { amap, geolocationOptions } = this
-      this.map = new amap.Map(this.$refs.container, this.config)
+      this.map = new amap.Map(this.$refs.container, this.mapOptions)
       geolocationOptions && this.getCurrentPosition()
 
       this.map.on('complete', () => {

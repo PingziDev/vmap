@@ -49,7 +49,7 @@ export interface Map {
   [x: string]: any
 }
 
-export interface MapOptions {
+export interface MapOptions extends Options {
   center?: number[]
   zoom?: number
   layers?: any[]
