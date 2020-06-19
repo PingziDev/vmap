@@ -10,7 +10,7 @@
     "build:libs": "node ./build/build-libs.js"
   },
   "types": "types/index.d.ts",
-  "main": "lib/index.common.js",
+  "main": "lib/index.umd.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",

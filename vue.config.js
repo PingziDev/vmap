@@ -1,6 +1,8 @@
 var path = require('path')
 module.exports = {
-  publicPath: '',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vue-amap2.0/'
+    : '',
   configureWebpack: {
     entry: {
       app: './examples/main.ts',
