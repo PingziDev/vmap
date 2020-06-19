@@ -34,10 +34,6 @@ export const demos: RouteConfig[] = [
 const routes: RouteConfig[] = [
   {
     path: '/',
-    redirect: '/Home',
-  },
-  {
-    path: '/Home',
     name: 'Home',
     component: Home,
   },
