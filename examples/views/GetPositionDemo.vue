@@ -12,9 +12,13 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
-  // import { VueAmap } from '../../packages'
-  import { GeolocationOptions, VueAmap } from '@vita2333/vue-amap2.0'
+  import { VueAmap } from '../../packages'
+  import { GeolocationOptions } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
+
+  console.log('vueAmap======================')
+  console.log(VueAmap) // todo
+  console.log('======================')
 
   Vue.use(VueAmap)
   @Component({
