@@ -8,9 +8,8 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
-  import { VueAmap } from '../../packages'
+  import { VueAmap, MapOptions } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
-  import { MapOptions } from '../../types'
 
   Vue.use(VueAmap)
   @Component({

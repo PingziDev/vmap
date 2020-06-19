@@ -966,11 +966,25 @@
   resolved "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.15.2.tgz#927997342bb9f4a5185a86e6579a0a18afc33b0a"
   integrity sha512-67ZgZpAlhIICIdfQrB5fnDvaKFcDxpKibxznfYRVAT4mQE41Dido/3Ty+E3xGBmTogc5+0Qb8tWhna+5B8z1iQ==
 
-"@vita2333/vue-amap2.0@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.0.tgz#db738936b90043c82f4d63d7118391a705f9f57e"
-  integrity sha512-dwG1vKGw9keSwVkKpVJgTb4FPVAFE1kvaDALbIks1FCXr61xVPDQFcoFU4BD1OP2vJx/xyxQb5jCjJkRcRDgTg==
+"@vita2333/vue-amap2.0@^0.1.0", "@vita2333/vue-amap2.0@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.1.tgz#1b48c71806e1a8b1cc7184fa1300f0f5d2fb5814"
+  integrity sha512-nIb2GJ/C2UI+bzcX2o8yCe4UnQGtXGlSJ63v2yktgJLnRdqpjS19syndklwBBlD3SvlSUAZ7OZye8RUymfQUHw==
   dependencies:
+    "@vita2333/vue-amap2.0" "^0.1.0"
+    core-js "^3.6.5"
+    vue "^2.6.11"
+    vue-class-component "^7.2.3"
+    vue-property-decorator "^8.4.2"
+    vue-router "^3.2.0"
+    vuex "^3.4.0"
+
+"@vita2333/vue-amap2.0@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.2.tgz#9e85a00a7b5bd21f412caf79eb3b1ba830f5c1da"
+  integrity sha512-n/icnpTJpwVPhT3pUNqukv5Rj6Jh8DyKW5i5zWMIGt6y8xhAHF+z5Ex+TET+NLtbme7QS20hr31cG3vNqdKyeg==
+  dependencies:
+    "@vita2333/vue-amap2.0" "^0.1.1"
     core-js "^3.6.5"
     vue "^2.6.11"
     vue-class-component "^7.2.3"

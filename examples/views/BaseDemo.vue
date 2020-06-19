@@ -7,8 +7,9 @@
 
 <script>
   import Vue from 'vue'
-  import { VueAmap } from '../../packages'
-  import DemoBlock from '@/components/DemoBlock'
+  // import { VueAmap } from '../../packages'
+  import { VueAmap } from '@vita2333/vue-amap2.0'
+  import DemoBlock from '@/components/DemoBlock.vue'
 
   Vue.use(VueAmap)
   export default {

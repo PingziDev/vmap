@@ -1,6 +1,6 @@
 {
   "name": "@vita2333/vue-amap2.0",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -10,8 +10,9 @@
     "build:libs": "node ./build/build-libs.js"
   },
   "types": "types/index.d.ts",
+  "main": "lib/index.common.js",
   "dependencies": {
-    "@vita2333/vue-amap2.0": "^0.1.0",
+    "@vita2333/vue-amap2.0": "^0.1.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
