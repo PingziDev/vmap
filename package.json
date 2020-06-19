@@ -1,6 +1,6 @@
 {
   "name": "@vita2333/vue-amap2.0",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "vuex": "^3.4.0",
-    "@vita2333/vue-amap2.0": "^0.1.7",
+    "@vita2333/vue-amap2.0": "^0.1.8",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
