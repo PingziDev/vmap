@@ -20,5 +20,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-amap.config.js
+examples/amap.config.js
 output.js

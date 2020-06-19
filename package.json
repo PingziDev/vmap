@@ -1,27 +1,27 @@
 {
   "name": "@vita2333/vue-amap2.0",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "private": false,
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve:examples": "vue-cli-service serve",
+    "build:examples": "vue-cli-service build",
+    "lint:examples": "vue-cli-service lint",
     "build:libs": "node ./build/build-libs.js"
   },
   "types": "types/index.d.ts",
   "main": "lib/index.common.js",
   "dependencies": {
-    "@vita2333/vue-amap2.0": "^0.1.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "@amap/amap-jsapi-loader": "^0.0.1"
   },
   "devDependencies": {
-    "@amap/amap-jsapi-loader": "^0.0.1",
+    "vuex": "^3.4.0",
+    "@vita2333/vue-amap2.0": "^0.1.7",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
@@ -46,5 +46,10 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "files": [
+    "lib",
+    "packages",
+    "types"
+  ]
 }

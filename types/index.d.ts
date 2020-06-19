@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import { VueAmap } from './vue-amap'
+import VueAmap from '../packages/vue-amap'
 import { UIComponent } from './component'
 
 export {
