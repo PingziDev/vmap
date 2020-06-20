@@ -34,6 +34,9 @@
       'showIndoorMap',// Boolean (default false)	是否自动展示室内地图，默认是 false
       'skyColor',// (String | Array<Number>)	天空颜色，3D 模式下带有俯仰角时会显示
       'mask',// Array<Number>	为 Map 实例指定掩模的路径，各图层将只显示路径范围内图像，3D视图下有效。 格式为一个经纬度的一维、二维或三维数组。
+
+      // event
+      'events',
     ],
     mounted() {
       this._initMap()
@@ -42,24 +45,25 @@
       this.map && this.map.destroy()
     },
     computed: {
-      filterProps() {
-        let res = {}
-        for (const i in this.$props) {
-          if (this.$props[i]) {
-            res[i] = this.$props[i]
+      optionsProps() {
+        let { events, ...options } = this.$props
+        for (const i in options) {
+          if (!options[i]) {
+            delete options[i]
           }
         }
-        return Object.keys(res).length > 0 ? res : undefined
+        return Object.keys(options).length > 0 ? options : undefined
       },
     },
     methods: {
       async _initMap() {
         const amap = await this.$amapLoader()
-        this.map = new amap.Map(this.$refs.container, this.filterProps)
-
-        this.map.on('complete', () => {
-          this.$emit('complete', this.map, this.amap)
-        })
+        this.map = new amap.Map(this.$refs.container, this.optionsProps)
+        if (this.events) {
+          for (const event in this.events) {
+            this.map.on(event, this.events[event])
+          }
+        }
       },
     },
   }

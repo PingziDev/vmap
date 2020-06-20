@@ -21,6 +21,22 @@ describe('test props', () => {
     const wrapper = mount(VueAmap, {
       localVue, propsData: { zoom: 20 },
     })
-    expect((wrapper.vm as any).filterProps.zoom).toEqual(20)
+    expect((wrapper.vm as any).optionsProps.zoom).toEqual(20)
+  })
+})
+
+describe('test events', () => {
+  it('should pass event', (done) => {
+    const wrapper = mount(VueAmap, {
+      localVue, propsData: {
+        on: {
+          click: (map: any) => {
+            expect(map).toBeDefined()
+            done()
+          },
+        },
+      },
+    })
+    wrapper.trigger('click')
   })
 })

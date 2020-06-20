@@ -1,7 +1,7 @@
 <template>
   <demo-block>
     <vue-amap></vue-amap>
-    <vue-amap :zoom="20"></vue-amap>
+    <vue-amap :events="events" :zoom="20"></vue-amap>
   </demo-block>
 </template>
 
@@ -14,6 +14,15 @@
   export default {
     name: 'BaseDemo',
     components: { DemoBlock, VueAmap },
+    data() {
+      return {
+        events: {
+          click: () => {
+            console.log('click map')
+          },
+        },
+      }
+    },
   }
 </script>
 
