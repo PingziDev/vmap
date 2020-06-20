@@ -17,9 +17,14 @@
     data() {
       return {
         events: {
-          click: () => {
-            console.log('click map')
+          click: (data) => {
+            console.log('click map===')
+            console.log(data)
           },
+          complete: () => {
+            console.log('complete')
+          }
+          ,
         },
       }
     },

@@ -60,8 +60,8 @@
         const amap = await this.$amapLoader()
         this.map = new amap.Map(this.$refs.container, this.optionsProps)
         if (this.events) {
-          for (const event in this.events) {
-            this.map.on(event, this.events[event])
+          for (const eventName in this.events) {
+            this.map.on(eventName, this.events[eventName])
           }
         }
       },

@@ -29,7 +29,8 @@ describe('test events', () => {
   it('should pass event', (done) => {
     const wrapper = mount(VueAmap, {
       localVue, propsData: {
-        on: {
+        events: {
+
           click: (map: any) => {
             expect(map).toBeDefined()
             done()
