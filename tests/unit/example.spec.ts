@@ -1,12 +1,26 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { createLocalVue, mount } from '@vue/test-utils'
+import MaoLoader, { VueAmap } from '../../packages'
+import { AMapConfig } from '../../examples/amap.config'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+const localVue = createLocalVue()
+localVue.use(MaoLoader, AMapConfig)
+
+describe('load map', () => {
+  it('should set $amapLoader', () => {
+    expect(localVue.prototype.$amapLoader).toBeDefined()
+  })
+})
+
+describe('test props', () => {
+
+  it('should be undefined when no props', () => {
+    const wrapper = mount(VueAmap, { localVue })
+    expect((wrapper.vm as any).filterProps).toBeUndefined()
+  })
+  it('should render props', () => {
+    const wrapper = mount(VueAmap, {
+      localVue, propsData: { zoom: 20 },
     })
-    expect(wrapper.text()).toMatch(msg)
+    expect((wrapper.vm as any).filterProps.zoom).toEqual(20)
   })
 })
