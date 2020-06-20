@@ -2,41 +2,49 @@
   "name": "@vita2333/vue-amap2.0",
   "version": "0.1.11",
   "private": false,
-  "license": "MIT",
   "scripts": {
-    "serve:examples": "vue-cli-service serve",
+    "test:unit": "vue-cli-service test:unit",
     "build:examples": "vue-cli-service build",
+    "build:libs": "node ./build/build-libs.js",
     "lint:examples": "vue-cli-service lint",
-    "build:libs": "node ./build/build-libs.js"
+    "serve:examples": "vue-cli-service serve"
   },
-  "types": "types/index.d.ts",
   "main": "lib/index.umd.js",
+  "files": [
+    "lib",
+    "packages",
+    "types"
+  ],
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^0.0.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
-    "vue-router": "^3.2.0",
-    "@amap/amap-jsapi-loader": "^0.0.1"
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
-    "vuex": "^3.4.0",
+    "@types/jest": "^24.0.19",
     "@vita2333/vue-amap2.0": "^0.1.11",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
+    "@vue/cli-plugin-unit-jest": "~4.4.0",
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
+    "@vue/test-utils": "^1.0.3",
     "lint-staged": "^9.5.0",
     "runjs": "^4.4.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.4.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "license": "MIT",
   "lint-staged": {
     "*.ts": [
       "vue-cli-service lint",
@@ -47,9 +55,5 @@
       "git add"
     ]
   },
-  "files": [
-    "lib",
-    "packages",
-    "types"
-  ]
+  "types": "types/index.d.ts"
 }
