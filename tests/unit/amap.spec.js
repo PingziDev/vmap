@@ -2,6 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import MaoLoader from '../../packages'
 import { AMapConfig } from '../../examples/amap.config'
 import VueAmap from '../../packages/VueAmap.vue'
+import { expect } from 'chai'
 
 const localVue = createLocalVue()
 localVue.use(MaoLoader, AMapConfig)
@@ -16,13 +17,13 @@ describe('test props', () => {
 
   it('should be undefined when no props', () => {
     const wrapper = mount(VueAmap, { localVue })
-    expect((wrapper.vm as any).filterProps).toBeUndefined()
+    expect((wrapper.vm).filterProps).toBeUndefined()
   })
   it('should render props', () => {
     const wrapper = mount(VueAmap, {
       localVue, propsData: { zoom: 20 },
     })
-    expect((wrapper.vm as any).optionsProps.zoom).toEqual(20)
+    expect((wrapper.vm).optionsProps.zoom).toEqual(20)
   })
 })
 

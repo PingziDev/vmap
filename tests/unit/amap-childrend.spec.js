@@ -26,7 +26,7 @@ describe('map components', () => {
 
   it('should inject parent', async () => {
     await localVue.nextTick()
-    const provided = (wrapper.vm.$children[0] as any)._provided
+    const provided = (wrapper.vm.$children[0])._provided
     expect(provided.$amap).toBeDefined()
   })
 })

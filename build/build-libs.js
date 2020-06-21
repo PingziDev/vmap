@@ -4,15 +4,15 @@ const glob = require('glob')
 const list =
   {
     index: {
-      input: 'packages/index.ts',
+      input: 'packages/index.js',
       output: 'index',
     },
   }
 
-// glob.sync('./packages/*/index.ts').forEach(path => {
+// glob.sync('./packages/*/index.js').forEach(path => {
 //   const chunk = path.split('packages/')[1].split('/index')[0]
 //   list[chunk] = {
-//     input: `packages/${ chunk }/index.ts`,
+//     input: `packages/${ chunk }/index.js`,
 //     output: chunk,
 //   }
 // })

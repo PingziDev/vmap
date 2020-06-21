@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
+import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-export const demos: RouteConfig[] = [
+export const demos = [
   {
     path: '/BaseDemo',
     name: 'BaseDemo',
@@ -31,7 +31,7 @@ export const demos: RouteConfig[] = [
   },
 ]
 
-const routes: RouteConfig[] = [
+const routes = [
   {
     path: '/',
     name: 'Home',

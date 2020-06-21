@@ -5,7 +5,7 @@ module.exports = {
     : '',
   configureWebpack: {
     entry: {
-      app: './examples/main.ts',
+      app: './examples/main.js',
     },
     resolve: {
       alias: {
