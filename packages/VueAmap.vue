@@ -1,9 +1,24 @@
 <template>
-	<div ref="container" style="width: 500px;height: 500px;"></div>
+	<div ref="container" style="width: 500px;height: 500px;">
+		<slot></slot>
+	</div>
 </template>
 <script>
   export default {
     name: 'VueAmap',
+    data() {
+      return {
+        amap: undefined,
+        map: undefined,
+      }
+    },
+    provide() {
+      return {
+        amap: this.amap,
+        getMap: () => this.map,
+
+      }
+    },
     props: [
       'center',// ([Number, Number] | LngLat)	初始中心经纬度
       'zoom',// Number	地图显示的缩放级别，可以设置为浮点数；若center与level未赋值，地图初始化默认显示用户所在城市范围。
@@ -42,7 +57,7 @@
       this._initMap()
     },
     destroyed() {
-      this.map && this.map.destroy()
+      this.$map && this.$map.destroy()
     },
     computed: {
       optionsProps() {
@@ -57,8 +72,9 @@
     },
     methods: {
       async _initMap() {
-        const amap = await this.$amapLoader()
-        this.map = new amap.Map(this.$refs.container, this.optionsProps)
+        this.amap = await this.$amapLoader()
+        this.map = new this.amap.Map(this.$refs.container, this.optionsProps)
+
         if (this.events) {
           for (const eventName in this.events) {
             this.map.on(eventName, this.events[eventName])

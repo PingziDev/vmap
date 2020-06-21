@@ -1,19 +1,21 @@
 <template>
   <demo-block>
-    <vue-amap></vue-amap>
-    <vue-amap :events="events" :zoom="20"></vue-amap>
+    <vue-amap>
+      <vue-amap-marker></vue-amap-marker>
+    </vue-amap>
+    <!--    <vue-amap :events="events" :zoom="20"></vue-amap>-->
   </demo-block>
 </template>
 
 
 <script>
-  import { VueAmap } from '../../packages'
   // import { VueAmap } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
+  import VueAmapMarker from '../../packages/VueAmapMarker'
 
   export default {
     name: 'BaseDemo',
-    components: { DemoBlock, VueAmap },
+    components: { VueAmapMarker, DemoBlock },
     data() {
       return {
         events: {

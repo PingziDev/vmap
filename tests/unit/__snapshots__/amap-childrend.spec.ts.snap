@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`map components should inject map 1`] = `
+<div style="width: 500px; height: 500px;">
+  <div style="width: 500px; height: 500px;"></div>
+</div>
+`;
+
+exports[`map components should render correctly 1`] = `
+<div style="width: 500px; height: 500px;">
+  <div style="width: 500px; height: 500px;"></div>
+</div>
+`;
