@@ -8,11 +8,11 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
-  import { VueAmap, MapOptions } from '@vita2333/vue-amap2.0'
+  import { MapOptions } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
 
   @Component({
-    components: { DemoBlock, VueAmap },
+    components: { DemoBlock },
   })
   export default class InitialDemo extends Vue {
     mapOptions: MapOptions | null = null

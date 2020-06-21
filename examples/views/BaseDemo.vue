@@ -11,11 +11,10 @@
 <script>
   // import { VueAmap } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
-  import VueAmapMarker from '../../packages/VueAmapMarker'
 
   export default {
     name: 'BaseDemo',
-    components: { VueAmapMarker, DemoBlock },
+    components: { DemoBlock },
     data() {
       return {
         events: {

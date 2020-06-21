@@ -10,11 +10,11 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
   // import { VueAmap } from '../../packages'
-  import { VueAmap, Map, AMap } from '@vita2333/vue-amap2.0'
+  import { Map, AMap } from '@vita2333/vue-amap2.0'
   import DemoBlock from '@/components/DemoBlock.vue'
 
   @Component({
-    components: { DemoBlock, VueAmap },
+    components: { DemoBlock },
   })
   export default class MapControlDemo extends Vue {
     onComplete1 (map: Map, amap: AMap) {
