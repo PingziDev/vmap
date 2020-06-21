@@ -2,11 +2,9 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import MaoLoader from '../../packages'
 import { AMapConfig } from '../../examples/amap.config'
 import VueAmap from '../../packages/VueAmap.vue'
-import { expect } from 'chai'
 
 const localVue = createLocalVue()
 localVue.use(MaoLoader, AMapConfig)
-
 describe('load map', () => {
   it('should set $amapLoader', () => {
     expect(localVue.prototype.$amapLoader).toBeDefined()

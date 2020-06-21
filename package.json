@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "private": false,
   "scripts": {
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit --require tests/setup.js",
     "build:examples": "vue-cli-service build",
     "build:libs": "node ./build/build-libs.js",
     "lint:examples": "vue-cli-service lint",
@@ -30,6 +30,9 @@
     "@vue/cli-service": "~4.4.0",
     "@vue/test-utils": "^1.0.3",
     "chai": "^4.1.2",
+    "expect": "^26.0.1",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
     "lint-staged": "^9.5.0",
     "runjs": "^4.4.2",
     "sass": "^1.26.5",
