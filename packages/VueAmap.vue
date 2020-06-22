@@ -8,15 +8,12 @@
     name: 'VueAmap',
     data() {
       return {
-        amap: undefined,
         map: undefined,
       }
     },
     provide() {
       return {
-        amap: this.amap,
-        getMap: () => this.map,
-
+        getMap: this.getMap,
       }
     },
     props: [
@@ -57,7 +54,7 @@
       this._initMap()
     },
     destroyed() {
-      this.$map && this.$map.destroy()
+      this.map && this.map.destroy()
     },
     computed: {
       optionsProps() {
@@ -72,8 +69,9 @@
     },
     methods: {
       async _initMap() {
-        this.amap = await this.$amapLoader()
-        this.map = new this.amap.Map(this.$refs.container, this.optionsProps)
+        global.AMap = await this.$amapLoader()
+        this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
+        // this.map = new this.amap.Map(this.$refs.container, this.optionsProps)
 
         if (this.events) {
           for (const eventName in this.events) {
@@ -81,7 +79,19 @@
           }
         }
       },
+      getMap(callback) {
+        const checkForMap = () => {
+          if (this.map) {
+            callback(this.map)
+          } else {
+            setTimeout(checkForMap, 50)
+          }
+        }
+
+        checkForMap()
+      },
     },
+
   }
 </script>
 

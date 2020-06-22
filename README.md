@@ -43,3 +43,18 @@ Vue.use(VueAmapLoader, {
 ```javascript
 global.AMap=xxx
 ```
+
+转换思路,巧妙利用callback
+```javascript
+   function getMap(callback) {
+        const checkForMap = () => {
+          if (this.map) {
+            callback(this.map)
+          } else {
+            setTimeout(checkForMap, 50)
+          }
+        }
+
+        checkForMap()
+   }
+```

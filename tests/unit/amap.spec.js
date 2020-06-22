@@ -1,3 +1,4 @@
+import expect from 'expect'
 import { createLocalVue, mount } from '@vue/test-utils'
 import AMapLoader from '../../packages'
 import { AMapConfig } from '../../examples/amap.config'
@@ -51,6 +52,14 @@ describe('data', () => {
   it('should set map', async () => {
     await flushPromises()
     expect(wrapper.vm.$data.map).toBeDefined()
+  })
+})
+
+describe('provide', () => {
+  it('should provide get', async () => {
+    wrapper.vm._provided.getMap(map => {
+      expect(map).toBeDefined()
+    })
   })
 })
 
