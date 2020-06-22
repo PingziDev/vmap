@@ -4,6 +4,8 @@
 	</div>
 </template>
 <script>
+  import Vue from 'vue'
+
   export default {
     name: 'Vmap',
     props: {
@@ -20,6 +22,7 @@
     data() {
       return {
         map: undefined,
+        unwatchFns: [],
       }
     },
     computed: {
@@ -38,12 +41,38 @@
     },
     destroyed() {
       this.map && this.map.destroy()
+      this.unwatchFns.forEach(fn => fn())
+      this.unwatchFns = []
     },
     methods: {
       async _initMap() {
         global.AMap = await this.$amapLoader()
         this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
         this._bindEvents()
+        this._setPropWatchers()
+      },
+      _setPropWatchers() {
+        Vue.observable(this.$attrs)
+        if (this.optionsProps) {
+          Object.keys(this.optionsProps).forEach(prop => {
+            // todo
+            function camelCase(name) {
+              return name.slice(0, 1).toUpperCase() + name.slice(1)
+            }
+
+            let handleFun = this.map[`set${ camelCase(prop) }`]
+            if (handleFun) {
+              console.log(prop)
+              this.unwatchFns.push(this.$watch(this.$attrs[prop], now => {
+                console.log('now======================')
+                console.log(now) // todo
+                console.log('======================')
+
+                handleFun(now)
+              }))
+            }
+          })
+        }
       },
       _bindEvents() {
         if (this.events) {

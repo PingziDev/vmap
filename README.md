@@ -44,7 +44,20 @@ Vue.use(VueAmapLoader, {
 global.AMap=xxx
 ```
 
-转换思路,巧妙利用callback
+异步组件测试, 通过`simple-mock`mock异步操作
+```javascript
+simple.mock(localVue.prototype, '$amapLoader', () => Promise.resolve(mockAMap))
+```
+
+几种等待异步更新的方法
+```javascript
+Vue.nextTick() // 必须是vue内部的异步更新,如:trigger('click'),在下一个hook完成更新
+async()=>{ await Promise() } 
+await flushPromises()
+```
+
+
+转换思路,巧妙利用callback来处理异步更新
 ```javascript
    function getMap(callback) {
         const checkForMap = () => {
@@ -58,3 +71,7 @@ global.AMap=xxx
         checkForMap()
    }
 ```
+
+
+//todo setPropWatchers() 数据双向绑定=>调用amap对应的函数 
+
