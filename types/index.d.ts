@@ -1,11 +1,7 @@
 import Vue from 'vue'
 
-import VueAmap from '../packages/vue-amap'
 import { UIComponent } from './component'
 
-export {
-  VueAmap,
-}
 
 export default UIComponent
 

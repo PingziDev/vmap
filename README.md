@@ -36,3 +36,10 @@ Vue.use(VueAmapLoader, {
 
 ### Demo
 [https://vita2333.github.io/vue-amap2.0](https://vita2333.github.io/vue-amap2.0/#/)
+
+
+### 开发踩坑
+设置全局变量
+```javascript
+global.AMap=xxx
+```

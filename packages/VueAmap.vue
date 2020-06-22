@@ -74,6 +74,9 @@
       async _initMap() {
         this.amap = await this.$amapLoader()
         this.map = new this.amap.Map(this.$refs.container, this.optionsProps)
+        console.log('thisMap======================')
+        console.log(this.map) // todo
+        console.log('======================')
 
         if (this.events) {
           for (const eventName in this.events) {

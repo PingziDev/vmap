@@ -2,12 +2,22 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import MaoLoader from '../../packages'
 import { AMapConfig } from '../../examples/amap.config'
 import VueAmap from '../../packages/VueAmap.vue'
+import simple from 'simple-mock'
 
 const localVue = createLocalVue()
+
 localVue.use(MaoLoader, AMapConfig)
+simple.mock(localVue, '$amapLoader', () => Promise.resolve('AMap'))
+
 describe('load map', () => {
   it('should set $amapLoader', () => {
-    expect(localVue.prototype.$amapLoader).toBeDefined()
+    expect(localVue.$amapLoader).toBeDefined()
+  })
+
+  it('should get amap', async () => {
+    const loader = localVue.$amapLoader
+    const amap = await loader()
+    expect(amap).toEqual('AMap')
   })
 })
 
