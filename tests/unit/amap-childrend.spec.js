@@ -1,9 +1,9 @@
 // import { createLocalVue, mount } from '@vue/test-utils'
-// import MaoLoader from '../../packages'
+// import AMapLoader from '../../packages'
 // import { AMapConfig } from '../../examples/amap.config'
 //
 // const localVue = createLocalVue()
-// localVue.use(MaoLoader, AMapConfig)
+// localVue.use(AMapLoader, AMapConfig)
 //
 // describe('map components', () => {
 //

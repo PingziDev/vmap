@@ -42,19 +42,6 @@
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.4.0"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  },
   "types": "types/index.d.ts"
 }
