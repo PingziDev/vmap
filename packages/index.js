@@ -1,5 +1,5 @@
-import VueAmap from './VueAmap.vue'
-import VueAmapComponent from './VueAmapMarker.vue'
+import VueAmap from './VueAmap'
+import VueAmapComponent from './VueAmapMarker'
 import AMapLoader from '@amap/amap-jsapi-loader'
 
 const components = [VueAmapComponent, VueAmap]

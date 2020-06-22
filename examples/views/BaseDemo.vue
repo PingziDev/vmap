@@ -1,8 +1,9 @@
 <template>
   <demo-block>
-    <vue-amap>
-      <vue-amap-marker></vue-amap-marker>
-    </vue-amap>
+    <vue-amap></vue-amap>
+    <!--    <vue-amap>-->
+    <!--      <vue-amap-marker></vue-amap-marker>-->
+    <!--    </vue-amap>-->
     <!--    <vue-amap :events="events" :zoom="20"></vue-amap>-->
   </demo-block>
 </template>
