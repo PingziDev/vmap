@@ -5,9 +5,10 @@ import store from './store'
 // import VueAmapLoader from '@vita2333/vue-amap2.0'
 import VueAmapLoader from '../packages'
 import { AMapConfig } from './amap.config.js'
+import DemoBlock from './components/DemoBlock'
 
 Vue.config.productionTip = false
-
+Vue.component(DemoBlock.name, DemoBlock)
 Vue.use(VueAmapLoader, AMapConfig)
 
 new Vue({

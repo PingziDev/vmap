@@ -7,8 +7,14 @@ export const demos = [
   {
     path: '/',
     name: 'BaseDemo',
-    component: () => import(/* webpackChunkName: "demo" */ '../views/BaseDemo.vue'),
+    component: () => import(/* webpackChunkName: "demo" */ '../views/BaseDemo'),
     meta: { title: '基本用法' },
+  },
+  {
+    path: '/MarkerDemo',
+    name: 'MarkerDemo',
+    component: () => import(/* webpackChunkName: "demo" */ '../views/MarkerDemo'),
+    meta: { title: '地图标记' },
   },
 ]
 

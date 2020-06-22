@@ -1,13 +1,16 @@
 <template>
   <demo-block>
-    <vue-amap></vue-amap>
+    <vue-amap>
+      <vue-amap-marker></vue-amap-marker>
+    </vue-amap>
   </demo-block>
 </template>
 
 
 <script>
   export default {
-    name: 'BaseDemo',
+    name: 'MarkerDemo',
+    components: {},
     data() {
       return {
         events: {

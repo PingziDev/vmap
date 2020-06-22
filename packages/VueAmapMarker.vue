@@ -1,30 +1,34 @@
-<template>
-	<div ref="container" style="width: 500px;height: 500px;">
-	</div>
-</template>
 <script>
   export default {
     name: 'VueAmapMarker',
     props: [
-
       // event
       'events',
     ],
-    inject: ['amap', 'getMap'],
+    computed: {
+      optionsProps() {
+        let { events, ...options } = this.$props
+        for (const i in options) {
+          if (!options[i]) {
+            delete options[i]
+          }
+        }
+        return Object.keys(options).length > 0 ? options : undefined
+      },
+    },
     mounted() {
-      console.log('thisGetMap======================')
-      console.log(this.getMap()) // todo
-      console.log('======================')
-
+      this.getMap(map => {
+        const marker = new AMap.Marker(this.optionsProps)
+        map.add(marker)
+      })
     },
     destroyed() {
     },
-    computed: {},
     methods: {},
+    inject: ['getMap'],
+    render(createElement, context) {
+      return null
+    },
   }
 </script>
 
-
-<style scoped>
-
-</style>

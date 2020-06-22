@@ -6,16 +6,6 @@
 <script>
   export default {
     name: 'VueAmap',
-    data() {
-      return {
-        map: undefined,
-      }
-    },
-    provide() {
-      return {
-        getMap: this.getMap,
-      }
-    },
     props: [
       'center',// ([Number, Number] | LngLat)	初始中心经纬度
       'zoom',// Number	地图显示的缩放级别，可以设置为浮点数；若center与level未赋值，地图初始化默认显示用户所在城市范围。
@@ -50,11 +40,10 @@
       // event
       'events',
     ],
-    mounted() {
-      this._initMap()
-    },
-    destroyed() {
-      this.map && this.map.destroy()
+    data() {
+      return {
+        map: undefined,
+      }
     },
     computed: {
       optionsProps() {
@@ -66,6 +55,12 @@
         }
         return Object.keys(options).length > 0 ? options : undefined
       },
+    },
+    mounted() {
+      this._initMap()
+    },
+    destroyed() {
+      this.map && this.map.destroy()
     },
     methods: {
       async _initMap() {
@@ -90,6 +85,11 @@
 
         checkForMap()
       },
+    },
+    provide() {
+      return {
+        getMap: this.getMap,
+      }
     },
 
   }
