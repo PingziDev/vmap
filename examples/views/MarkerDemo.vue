@@ -1,12 +1,12 @@
 <template>
 	<demo-block>
 		<button @click="showMarker=!showMarker">显示标记</button>
-		<vue-amap>
-			<vue-amap-marker :key="index"
-			                 v-bind="marker"
-			                 v-for="(marker,index) in markers"
-			                 v-if="showMarker"></vue-amap-marker>
-		</vue-amap>
+		<vmap>
+			<vmap-marker :key="index"
+			             v-bind="marker"
+			             v-for="(marker,index) in markers"
+			             v-if="showMarker"></vmap-marker>
+		</vmap>
 	</demo-block>
 </template>
 

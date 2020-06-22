@@ -13,9 +13,9 @@
 //     },
 //
 //     template: `
-// 		<vue-amap>
-// 			<vue-amap-marker></vue-amap-marker>
-// 		</vue-amap>
+// 		<vmap>
+// 			<vmap-marker></vmap-marker>
+// 		</vmap>
 //     `,
 //   })
 //

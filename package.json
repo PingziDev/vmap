@@ -1,6 +1,6 @@
 {
-  "name": "@vita2333/vue-amap2.0",
-  "version": "0.1.11",
+  "name": "@vita2333/vmap",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
     "test:unit": "vue-cli-service test:unit --require tests/setup.js",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/expect": "^24.3.0",
     "@types/mocha": "^7.0.2",
-    "@vita2333/vue-amap2.0": "^0.1.11",
+    "@vita2333/vmap": "^0.1.11",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-unit-mocha": "~4.4.0",

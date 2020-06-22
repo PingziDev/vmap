@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'VueAmapMarker',
+    name: 'VmapMarker',
     props: [
       // event
       'events',

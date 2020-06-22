@@ -2,7 +2,7 @@ import expect from 'expect'
 import { createLocalVue, mount } from '@vue/test-utils'
 import AMapLoader from '../../packages'
 import { AMapConfig } from '../../examples/amap.config'
-import VueAmap from '../../packages/VueAmap.vue'
+import VueAmap from '../../packages/Vmap.vue'
 import simple from 'simple-mock'
 import flushPromises from 'flush-promises'
 

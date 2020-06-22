@@ -1,16 +1,16 @@
-# vue-amap2.0
+# vmap
 
 ### 安装
 ```shell script
-npm i @vita2333/vue-amap2.0
+npm i @vita2333/vmap
 or 
-yarn add @vita2333/vue-amap2.0
+yarn add @vita2333/vmap
 ```
 
 ### 引入
 在`main.js`中添加
 ```javascript
-import VueAmapLoader from '@vita2333/vue-amap2.0'
+import VueAmapLoader from '@vita2333/vmap'
 
 Vue.use(VueAmapLoader, {
   key: "your key", // 首次调用load必须填写key
@@ -22,11 +22,11 @@ Vue.use(VueAmapLoader, {
 ### 使用
 ```vue
 <template>
-    <vue-amap></vue-amap>
+    <vmap></vmap>
 </template>
 
 <script>
-  import { VueAmap } from '@vita2333/vue-amap2.0'
+  import { VueAmap } from '@vita2333/vmap'
 
   export default {
      components:{ VueAmap }
@@ -35,7 +35,7 @@ Vue.use(VueAmapLoader, {
 ```
 
 ### Demo
-[https://vita2333.github.io/vue-amap2.0](https://vita2333.github.io/vue-amap2.0/#/)
+[https://vita2333.github.io/vmap](https://vita2333.github.io/vmap/#/)
 
 
 ### 开发踩坑

@@ -1028,9 +1028,9 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vita2333/vue-amap2.0@^0.1.11":
+"@vita2333/vmap@^0.1.11":
   version "0.1.11"
-  resolved "https://registry.npmjs.org/@vita2333/vue-amap2.0/-/vue-amap2.0-0.1.11.tgz#a15d0b2d7e72dfc923a0bc6773686dfc8950a6a6"
+  resolved "https://registry.npmjs.org/@vita2333/vmap/-/vmap-0.1.11.tgz#a15d0b2d7e72dfc923a0bc6773686dfc8950a6a6"
   integrity sha512-D1N+vZTmfuOrLu5P+F238lBWHZvhANtsNyFWhV8kT3AXKSiQh4lU4q+6+6DpU7OfwM8dLxV82puJAGhxHpqQ/A==
   dependencies:
     "@amap/amap-jsapi-loader" "^0.0.1"

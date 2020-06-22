@@ -1,6 +1,6 @@
 <template>
   <demo-block>
-    <vue-amap :events="events"></vue-amap>
+    <vmap :events="events"></vmap>
   </demo-block>
 </template>
 

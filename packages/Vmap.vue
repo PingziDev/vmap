@@ -5,7 +5,7 @@
 </template>
 <script>
   export default {
-    name: 'VueAmap',
+    name: 'Vmap',
     props: [
       'events',
     ],
