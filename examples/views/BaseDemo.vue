@@ -1,6 +1,6 @@
 <template>
   <demo-block>
-    <vue-amap></vue-amap>
+    <vue-amap :events="events"></vue-amap>
   </demo-block>
 </template>
 
@@ -16,7 +16,7 @@
             console.log(data)
           },
           complete: () => {
-            console.log('complete')
+            console.log('complete map=========')
           }
           ,
         },

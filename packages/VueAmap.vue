@@ -33,15 +33,16 @@
     },
     methods: {
       async _initMap() {
-        this.$amapLoader().then(AMap => {
-          global.AMap = AMap
-          this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
-          if (this.events) {
-            for (const eventName in this.events) {
-              this.map.on(eventName, this.events[eventName])
-            }
+        global.AMap = await this.$amapLoader()
+        this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
+        this._bindEvents()
+      },
+      _bindEvents() {
+        if (this.events) {
+          for (const eventName in this.events) {
+            this.map.on(eventName, this.events[eventName])
           }
-        })
+        }
       },
       getMap(callback) {
         const checkForMap = () => {

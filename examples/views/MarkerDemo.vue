@@ -1,10 +1,10 @@
 <template>
 	<demo-block>
-		<button @click="showMarker=!showMarker">toggle marker</button>
+		<button @click="showMarker=!showMarker">显示标记</button>
 		<vue-amap>
 			<vue-amap-marker :key="index"
-			                 v-bind="option"
-			                 v-for="(option,index) in options"
+			                 v-bind="marker"
+			                 v-for="(marker,index) in markers"
 			                 v-if="showMarker"></vue-amap-marker>
 		</vue-amap>
 	</demo-block>
@@ -18,36 +18,20 @@
     data() {
       return {
         showMarker: true,
-        options: [],
-        events: {
-          click: (data) => {
-            console.log('click map===')
-            console.log(data)
-          },
-          complete: () => {
-            console.log('complete')
-          }
-          ,
-        },
-      }
-    },
-    beforeCreate() {
-      this.$amapLoader().then(AMap => {
-        global.AMap = AMap
-      })
-    },
-    created() {
-      this.$amapLoader().then(AMap => {
-        this.options = [
-          {},
+        markers: [
           {
-            position: new AMap.LngLat(116.397428, 39.90923),
+            position: [116.397428, 39.90923],
             icon: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
             anchor: 'bottom-center',
           },
-        ]
-      })
+          {
+            position: [116.6, 39.90923],
+            icon: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',
+          },
+        ],
+      }
     },
+
   }
 </script>
 

@@ -14,6 +14,14 @@ class mockClass {
   constructor() {
 
   }
+
+  on(name) {
+
+  }
+
+  off() {
+
+  }
 }
 
 const mockAMap = {
@@ -62,19 +70,3 @@ describe('provide', () => {
     })
   })
 })
-
-// describe('test events', () => {
-//   it('should pass event', (done) => {
-//     const wrapper = mount(VueAmap, {
-//       localVue, propsData: {
-//         events: {
-//           click: (map: any) => {
-//             expect(map).toBeDefined()
-//             done()
-//           },
-//         },
-//       },
-//     })
-//     wrapper.trigger('click')
-//   })
-// })
