@@ -12,7 +12,7 @@
     },
     computed: {
       optionsProps() {
-        let { events, ...options } = this.$props
+        let { ...options } = this.$attrs
         for (const i in options) {
           if (!options[i]) {
             delete options[i]
