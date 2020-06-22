@@ -22,6 +22,12 @@ export const demos = [
     component: () => import(/* webpackChunkName: "demo" */ '../views/PluginDemo'),
     meta: { title: '缩放按钮' },
   },
+  {
+    path: '/SearchDemo',
+    name: 'SearchDemo',
+    component: () => import(/* webpackChunkName: "demo" */ '../views/SearchDemo'),
+    meta: { title: '地址搜索' },
+  },
 ]
 
 
