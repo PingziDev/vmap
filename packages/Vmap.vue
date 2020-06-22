@@ -1,14 +1,22 @@
 <template>
-	<div ref="container" style="width: 500px;height: 500px;">
+	<div :style="{width,height}" ref="container">
 		<slot></slot>
 	</div>
 </template>
 <script>
   export default {
     name: 'Vmap',
-    props: [
-      'events',
-    ],
+    props: {
+      width: {
+        type: String,
+        default: '500px',
+      },
+      height: {
+        type: String,
+        default: '500px',
+      },
+      events: { type: Object },
+    },
     data() {
       return {
         map: undefined,

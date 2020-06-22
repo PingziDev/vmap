@@ -1,6 +1,6 @@
 <template>
   <demo-block>
-    <vmap :events="events"></vmap>
+    <vmap :events="events" height="300px"></vmap>
   </demo-block>
 </template>
 
