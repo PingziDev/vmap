@@ -64,15 +64,15 @@
     },
     methods: {
       async _initMap() {
-        global.AMap = await this.$amapLoader()
-        this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
-        // this.map = new this.amap.Map(this.$refs.container, this.optionsProps)
-
-        if (this.events) {
-          for (const eventName in this.events) {
-            this.map.on(eventName, this.events[eventName])
+        this.$amapLoader().then(AMap => {
+          global.AMap = AMap
+          this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
+          if (this.events) {
+            for (const eventName in this.events) {
+              this.map.on(eventName, this.events[eventName])
+            }
           }
-        }
+        })
       },
       getMap(callback) {
         const checkForMap = () => {

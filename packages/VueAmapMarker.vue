@@ -5,6 +5,11 @@
       // event
       'events',
     ],
+    data() {
+      return {
+        marker: undefined,
+      }
+    },
     computed: {
       optionsProps() {
         let { events, ...options } = this.$props
@@ -18,11 +23,14 @@
     },
     mounted() {
       this.getMap(map => {
-        const marker = new AMap.Marker(this.optionsProps)
-        map.add(marker)
+        this.marker = new AMap.Marker(this.optionsProps)
+        map.add(this.marker)
       })
     },
     destroyed() {
+      this.marker && this.getMap(map => {
+        map.remove(this.marker)
+      })
     },
     methods: {},
     inject: ['getMap'],
