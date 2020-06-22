@@ -24,7 +24,7 @@
     },
     computed: {
       optionsProps() {
-        let { events, ...options } = this.$attrs
+        const { ...options } = this.$attrs
         for (const i in options) {
           if (!options[i]) {
             delete options[i]

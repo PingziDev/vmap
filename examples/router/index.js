@@ -16,6 +16,12 @@ export const demos = [
     component: () => import(/* webpackChunkName: "demo" */ '../views/MarkerDemo'),
     meta: { title: '地图标记' },
   },
+  {
+    path: '/PluginDemo',
+    name: 'PluginDemo',
+    component: () => import(/* webpackChunkName: "demo" */ '../views/PluginDemo'),
+    meta: { title: '缩放按钮' },
+  },
 ]
 
 

@@ -1,8 +1,9 @@
-import VueAmap from './Vmap'
-import VueAmapComponent from './VmapMarker'
+import Vmap from './Vmap'
+import VmapMarker from './VmapMarker'
+import VmapPlugin from './VmapPlugin'
 import AMapLoader from '@amap/amap-jsapi-loader'
 
-const components = [VueAmapComponent, VueAmap]
+const components = [Vmap, VmapMarker, VmapPlugin]
 const install = ((
   Vue1, options) => {
   Vue1.prototype.$amapLoader = () => AMapLoader.load(options)
