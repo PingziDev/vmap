@@ -1,8 +1,5 @@
 <template>
-  <demo-block>
-    <vmap @click="click" @complete="complete" height="300px"></vmap>
-    <br>
-    <h3>数据绑定</h3>
+  <div>
     <label>
       经度
       <input type="number" v-model="lng">
@@ -14,8 +11,8 @@
     <label>zoom
       <input type="number" v-model="zoom">
     </label>
-    <vmap :center="[lng,lat]" :zoom="zoom"></vmap>
-  </demo-block>
+    <vmap :center="[lng,lat]" :zoom="zoom" @click="click" @complete="complete" height="300px" width="300px"></vmap>
+  </div>
 </template>
 
 
