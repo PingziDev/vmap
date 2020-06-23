@@ -122,3 +122,35 @@ $listeners: 当组件被调用时，外部监听的这个组件的所有事件�
 
 //todo setPropWatchers() 数据双向绑定=>调用amap对应的函数 
 
+vuepress基于markdown写vue,所以有没有空行,是否顶格差别很大!!!
+这样写出不来
+```markdown
+<DemoBlock title="测试" desc="基础文档展示">
+  <base-demo/>
+
+  <template slot="codeDesc">
+   按钮实体
+  </template>
+
+  <div v-highlight slot="code" lang="vue">
+   <<< @/examples/views/BaseDemo.vue
+  </div>
+</DemoBlock>
+```
+必须写成
+```markdown
+<DemoBlock title="测试" desc="基础文档展示">
+  <base-demo/>
+
+  <template slot="codeDesc">
+   按钮实体
+  </template>
+
+  <div v-highlight slot="code" lang="vue">
+
+   <<< @/examples/views/BaseDemo.vue
+   
+  </div>
+</DemoBlock>
+```
+坑了我一个下午!!!

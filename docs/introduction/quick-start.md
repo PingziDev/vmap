@@ -5,10 +5,10 @@
    按钮实体
   </template>
 
-  <div v-highlight slot="code" lang="vue">
+  <div slot="code" lang="vue">
 
-<<< @/examples/views/BaseDemo.vue
-
+   <<< @/examples/views/BaseDemo.vue
+   
   </div>
 </DemoBlock>
 
