@@ -1,8 +1,8 @@
 <template>
   <demo-block>
     <vmap @click="click" @complete="complete" height="300px"></vmap>
-    <vmap :center="[lng,lat]" :zoom="zoom" viewMode="3D"></vmap>
     <br>
+    <h3>数据绑定</h3>
     <label>
       经度
       <input type="number" v-model="lng">
@@ -14,6 +14,7 @@
     <label>zoom
       <input type="number" v-model="zoom">
     </label>
+    <vmap :center="[lng,lat]" :zoom="zoom"></vmap>
   </demo-block>
 </template>
 
@@ -23,7 +24,7 @@
     name: 'BaseDemo',
     data() {
       return {
-        zoom: 20,
+        zoom: 10,
         lng: 116.397428,
         lat: 39.90923,
       }
