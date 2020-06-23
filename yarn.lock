@@ -1045,14 +1045,13 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vita2333/vmap@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.npmjs.org/@vita2333/vmap/-/vmap-0.1.1.tgz#0bac18272e124283fee8d201e3f74813a7082e52"
-  integrity sha512-J9oPLkIczM/b5WSnPV3okfqritFq2I+r3qLcKD/eVl8eJwF5dfcjgCU2OTQ41KQ0i51d2pcOTcanVA944CklTg==
+"@vita2333/vmap@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/@vita2333/vmap/-/vmap-0.1.2.tgz#2c8982d384d17d2292389b32926b5c0ea28b3200"
+  integrity sha512-nieivXddTrLBZ4e8/MCn7uF4De8k2M8oKF3KfMVTpUfz9tGDRp3HmVhiFcdOvrQADk80WYQZOizX/b73HeOBxQ==
   dependencies:
     "@amap/amap-jsapi-loader" "^0.0.1"
     "@amap/amap-jsapi-types" "^0.0.4"
-    core-js "^3.6.5"
     vue "^2.6.11"
     vue-router "^3.2.0"
 
