@@ -1,13 +1,8 @@
-# 快速上手
-
 <template>
     <DemoBlock title="地图" desc="地图使用示例">
     <BaseDemo></BaseDemo>
     <highlight-code slot="code" lang="vue">
-         <<< @/examples/views/MarkerDemo.vue
-         <<< @/examples/../../views/BaseDemo.vue
-         <<< @/../../examples/views/BaseDemo.vue
-         <<< @/../examples/views/BaseDemo.vue
+         <<< @/examples/views/BaseDemo.vue
     </highlight-code>
     </DemoBlock>
 </template>    

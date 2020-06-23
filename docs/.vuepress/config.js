@@ -3,7 +3,7 @@ const pkg = require('../../package.json')
 module.exports = {
   title: 'Vmap',
   description: pkg.description,
-  base: '/',
+  base: '/vmap/',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
