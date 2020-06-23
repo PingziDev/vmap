@@ -2,7 +2,7 @@
     <DemoBlock title="地图" desc="地图使用示例">
     <BaseDemo></BaseDemo>
     <highlight-code slot="code" lang="vue">
-         <<< @/examples/views/BaseDemo.vue
+         <<< @/examples/views/test.vue
     </highlight-code>
     </DemoBlock>
 </template>    
@@ -10,6 +10,7 @@
 
 
 <script>
+
   export default {
     data() {
       return {

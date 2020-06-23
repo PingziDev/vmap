@@ -40,6 +40,7 @@ export default ({
         f.replace(/.*\//, '$1').replace(/\.\w+$/, ''),
       ),
     )
+
     // Register component globally
     Vue.component(
       componentName,
