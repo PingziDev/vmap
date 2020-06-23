@@ -4,10 +4,12 @@
   "private": false,
   "scripts": {
     "test:unit": "vue-cli-service test:unit --require tests/setup.js",
-    "build:examples": "vue-cli-service build",
-    "build:libs": "node ./build/build-libs.js",
-    "lint:examples": "vue-cli-service lint",
-    "serve:examples": "vue-cli-service serve"
+    "libs:build": "node ./build/build-libs.js",
+    "examples:build": "vue-cli-service build",
+    "examples:lint": "vue-cli-service lint",
+    "examples:serve": "vue-cli-service serve",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "main": "lib/index.umd.js",
   "files": [
@@ -42,6 +44,7 @@
     "sass-loader": "^8.0.2",
     "simple-mock": "^0.8.0",
     "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.2",
     "vuex": "^3.4.0"
   },
   "license": "MIT",
