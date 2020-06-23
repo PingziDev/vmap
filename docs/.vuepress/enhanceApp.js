@@ -1,6 +1,3 @@
-import VueHighlightJS from 'vue-highlight.js'
-// import 'vue-highlight.js/lib/allLanguages'
-import 'highlight.js/styles/atom-one-dark.css'
 import VueAmapLoader from '@vita2333/vmap'
 import { AMapConfig } from '../../examples/amap.config'
 import upperFirst from 'lodash/upperFirst'
@@ -47,6 +44,5 @@ export default ({
     )
   })
 
-  Vue.use(VueHighlightJS)
 
 }

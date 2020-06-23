@@ -5,7 +5,7 @@
    按钮实体
   </template>
 
-  <div slot="code" lang="vue">
+  <div slot="code">
 
    <<< @/examples/views/BaseDemo.vue
    
