@@ -1,5 +1,6 @@
 {
   "name": "@vita2333/vmap",
+  "description": "vue + 高德地图amap2.0",
   "version": "0.1.1",
   "private": false,
   "scripts": {
