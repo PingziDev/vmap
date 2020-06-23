@@ -1,27 +1,18 @@
-<template>
-    <DemoBlock title="地图" desc="地图使用示例">
-    <BaseDemo></BaseDemo>
-    <highlight-code slot="code" lang="vue">
-         <<< @/examples/views/test.vue
-    </highlight-code>
-    </DemoBlock>
-</template>    
+<DemoBlock title="测试" desc="基础文档展示">
+  <base-demo/>
 
+  <template slot="codeDesc">
+   按钮实体
+  </template>
 
+  <div v-highlight slot="code" lang="vue">
+
+<<< @/examples/views/BaseDemo.vue
+
+  </div>
+</DemoBlock>
 
 <script>
-
   export default {
-    data() {
-      return {
-      
-       }
-    },
   }
 </script>
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |

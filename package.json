@@ -36,6 +36,7 @@
     "chai": "^4.1.2",
     "expect": "^26.0.1",
     "flush-promises": "^1.0.2",
+    "highlight.js": "^10.1.1",
     "jsdom": "^16.2.2",
     "jsdom-global": "^3.0.2",
     "less": "^3.11.3",

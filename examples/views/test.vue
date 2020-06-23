@@ -1,10 +1,10 @@
 <template>
-
+<div>fdsfsdkfds</div>
 </template>
 
 <script>
   export default {
-    name: 'base',
+    name: 'test',
   }
 </script>
 

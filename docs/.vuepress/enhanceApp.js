@@ -1,5 +1,5 @@
 import VueHighlightJS from 'vue-highlight.js'
-import 'vue-highlight.js/lib/allLanguages'
+// import 'vue-highlight.js/lib/allLanguages'
 import 'highlight.js/styles/atom-one-dark.css'
 import VueAmapLoader from '@vita2333/vmap'
 import { AMapConfig } from '../../examples/amap.config'
@@ -15,7 +15,6 @@ export default ({
   isServer, // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
   Vue.use(VueAmapLoader, AMapConfig)
-  Vue.use(VueHighlightJS)
 
   /**
    * 注册所有component
@@ -47,4 +46,7 @@ export default ({
       componentConfig.default || componentConfig,
     )
   })
+
+  Vue.use(VueHighlightJS)
+
 }
