@@ -9,36 +9,37 @@
       </p>
     </header>
     <DemoCard :online-run-link="bindValue.onlineRunLink">
-      <slot />
+      <slot/>
       <template slot="codeDesc">
-        <slot name="codeDesc" />
+        <slot name="codeDesc"/>
       </template>
       <template slot="code">
-        <slot name="code" />
+        <slot name="code"/>
       </template>
     </DemoCard>
   </div>
 </template>
 <script>
-import DemoCard from './DemoCard'
-export default {
-  components: { DemoCard },
-  data() {
-    return {};
-  },
-  computed: {
-    bindValue() {
-      return { ...this.$attrs, ...this.props }
-    }
+  import DemoCard from './DemoCard'
+
+  export default {
+    components: { DemoCard },
+    data() {
+      return {}
+    },
+    computed: {
+      bindValue() {
+        return { ...this.$attrs, ...this.props }
+      },
+    },
   }
-};
 </script>
 <style lang="less" scoped>
-.demo-block {
-  .desc {
-    font-size: 14px;
-    line-height: 1.5em;
-    color: #5e6d82;
+  .demo-block {
+    .desc {
+      font-size: 14px;
+      line-height: 1.5em;
+      color: #5e6d82;
+    }
   }
-}
 </style>

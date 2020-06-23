@@ -4,12 +4,12 @@
       <slot />
     </div>
     <div
-      v-show="showCode"
       class="code"
+      v-show="showCode"
     >
       <div
-        v-if="$slots.codeDesc"
         class="code-desc"
+        v-if="$slots.codeDesc"
       >
         <slot name="codeDesc" />
       </div>
@@ -18,14 +18,14 @@
       </div>
     </div>
     <div
-      class="action"
       @click="showCode=!showCode"
+      class="action"
     >
       <span>{{ `${showCode?'隐藏':'显示'}代码` }}</span>
       <span
-        v-if="$attrs.onlineRunLink"
-        class="open"
         @click="open"
+        class="open"
+        v-if="$attrs.onlineRunLink"
       >
         在线运行
       </span>
@@ -36,7 +36,7 @@
 export default {
   data() {
     return {
-      showCode: false
+      showCode: true,
     };
   },
   methods: {

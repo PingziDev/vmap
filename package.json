@@ -21,7 +21,6 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^0.0.1",
     "@amap/amap-jsapi-types": "^0.0.4",
-    "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
@@ -36,7 +35,6 @@
     "@vue/cli-service": "~4.4.0",
     "@vue/test-utils": "^1.0.3",
     "chai": "^4.1.2",
-    "element-ui": "^2.13.2",
     "expect": "^26.0.1",
     "flush-promises": "^1.0.2",
     "jsdom": "^16.2.2",
