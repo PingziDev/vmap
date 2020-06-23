@@ -51,6 +51,13 @@
         this._bindEvents()
         this._setPropWatchers()
       },
+      _bindEvents() {
+        if (Object.keys(this.$listeners).length > 0) {
+          for (const eventName in this.$listeners) {
+            this.map.on(eventName, this.$listeners[eventName])
+          }
+        }
+      },
       _setPropWatchers() {
         Vue.observable(this.$attrs)
         if (this.optionsProps) {
@@ -72,13 +79,6 @@
               }))
             }
           })
-        }
-      },
-      _bindEvents() {
-        if (this.events) {
-          for (const eventName in this.events) {
-            this.map.on(eventName, this.events[eventName])
-          }
         }
       },
       getMap(callback) {

@@ -39,6 +39,12 @@ Vue.use(VueAmapLoader, {
 
 
 ### 开发踩坑
+发布dist/到专属分支
+```shell script
+yarn run build
+git commit -m 'update gh-pages'
+git subtree push --prefix dist origin gh-pages     
+```
 设置全局变量
 ```javascript
 global.AMap=xxx
@@ -72,6 +78,47 @@ await flushPromises()
    }
 ```
 
+利用hook事件钩子将事件监听和销毁放在一起,增加代码可读性
+```javascript
+export default {
+    mounted(){
+        this.map=xxxx
+    },
+    destroyed(){
+        this.map.destroy()
+    }
+}
+```
+替换为
+```javascript
+export default {
+    mounted(){
+        this.map=xxxx
+        this.$once('hook:destroyed',()=>{
+              this.map.destroy()
+        })
+    },
+}
+```
+
+函数式组件
+```javascript
+export default { 
+    functional: true
+}
+```
+或者
+```html
+<template functional>
+    <div>xxxxx</div>
+</template>
+```
+
+传递属性和事件
+$attrs: 当组件在调用时传入的属性没有在props里面定义时，传入的属性将被绑定到$attrs属性内（class与style除外，他们会挂载到组件最外层元素上）。并可通过v-bind="$attrs"传入到内部组件中
+
+
+$listeners: 当组件被调用时，外部监听的这个组件的所有事件都可以通过$listeners获取到。并可通过v-on="$listeners"传入到内部组件中。
 
 //todo setPropWatchers() 数据双向绑定=>调用amap对应的函数 
 

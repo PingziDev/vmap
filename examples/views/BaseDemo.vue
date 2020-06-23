@@ -1,6 +1,6 @@
 <template>
   <demo-block>
-    <vmap :events="events" height="300px"></vmap>
+    <vmap @click="click" @complete="complete" height="300px"></vmap>
     <vmap :cencer="[lng,lat]" viewMode="3D" zoom="10"></vmap>
     <br>
     <label>
@@ -22,17 +22,16 @@
       return {
         lng: 116.397428,
         lat: 39.90923,
-        events: {
-          click: (data) => {
-            console.log('click map===')
-            console.log(data)
-          },
-          complete: () => {
-            console.log('complete map=========')
-          }
-          ,
-        },
       }
+    },
+    methods: {
+      click: (data) => {
+        console.log('click map===')
+        console.log(data)
+      },
+      complete: () => {
+        console.log('complete map=========')
+      },
     },
   }
 </script>
