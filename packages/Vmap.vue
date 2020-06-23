@@ -4,10 +4,9 @@
 	</div>
 </template>
 <script>
-  import Vue from 'vue'
-
   export default {
     name: 'Vmap',
+    inheritAttrs: false, // $attrs不显示在dom上
     props: {
       width: {
         type: String,
@@ -18,16 +17,48 @@
         default: '500px',
       },
       events: { type: Object },
+      /**
+       * Map options
+       */
+      center: {},
+      zoom: {},
+      rotation: {},
+      pitch: {},
+      viewMode: {},
+      features: {},
+      layers: {},
+      zooms: {},
+      dragEnable: {},
+      zoomEnable: {},
+      jogEnable: {},
+      pitchEnable: {},
+      rotateEnable: {},
+      animateEnable: {},
+      keyboardEnable: {},
+      doubleClickZoom: {},
+      scrollWheel: {},
+      touchZoom: {},
+      touchZoomCenter: {},
+      showLabel: {},
+      defaultCursor: {},
+      isHotspot: {},
+      mapStyle: {},
+      wallColor: {},
+      roofColor: {},
+      showBuildingBlock: {},
+      showIndoorMap: {},
+      skyColor: {},
+      mask: {},
     },
     data() {
       return {
         map: undefined,
-        unwatchFns: [],
+        attrs: {},
       }
     },
     computed: {
       optionsProps() {
-        const { ...options } = this.$attrs
+        const { width, height, events, ...options } = this.$props
         for (const i in options) {
           if (!options[i]) {
             delete options[i]
@@ -39,17 +70,15 @@
     mounted() {
       this._initMap()
     },
-    destroyed() {
-      this.map && this.map.destroy()
-      this.unwatchFns.forEach(fn => fn())
-      this.unwatchFns = []
-    },
     methods: {
       async _initMap() {
         global.AMap = await this.$amapLoader()
         this.$set(this, 'map', new AMap.Map(this.$refs.container, this.optionsProps))
         this._bindEvents()
         this._setPropWatchers()
+        this.$once('hook:destroy', () => {
+          this.map.destroy()
+        })
       },
       _bindEvents() {
         if (Object.keys(this.$listeners).length > 0) {
@@ -59,27 +88,24 @@
         }
       },
       _setPropWatchers() {
-        Vue.observable(this.$attrs)
         if (this.optionsProps) {
           Object.keys(this.optionsProps).forEach(prop => {
-            // todo
             function camelCase(name) {
               return name.slice(0, 1).toUpperCase() + name.slice(1)
             }
 
             let handleFun = this.map[`set${ camelCase(prop) }`]
             if (handleFun) {
-              console.log(prop)
-              this.unwatchFns.push(this.$watch(this.$attrs[prop], now => {
-                console.log('now======================')
-                console.log(now) // todo
-                console.log('======================')
-
+              const unwatchFn = this.$watch(prop, now => {
                 handleFun(now)
-              }))
+              })
+              this.$once('hook:destroy', () => {
+                unwatchFn()
+              })
             }
           })
         }
+
       },
       getMap(callback) {
         const checkForMap = () => {
