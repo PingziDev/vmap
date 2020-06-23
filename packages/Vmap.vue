@@ -6,7 +6,6 @@
 <script>
   export default {
     name: 'Vmap',
-    inheritAttrs: false, // $attrs不显示在dom上
     props: {
       width: {
         type: String,
@@ -17,48 +16,15 @@
         default: '500px',
       },
       events: { type: Object },
-      /**
-       * Map options
-       */
-      center: {},
-      zoom: {},
-      rotation: {},
-      pitch: {},
-      viewMode: {},
-      features: {},
-      layers: {},
-      zooms: {},
-      dragEnable: {},
-      zoomEnable: {},
-      jogEnable: {},
-      pitchEnable: {},
-      rotateEnable: {},
-      animateEnable: {},
-      keyboardEnable: {},
-      doubleClickZoom: {},
-      scrollWheel: {},
-      touchZoom: {},
-      touchZoomCenter: {},
-      showLabel: {},
-      defaultCursor: {},
-      isHotspot: {},
-      mapStyle: {},
-      wallColor: {},
-      roofColor: {},
-      showBuildingBlock: {},
-      showIndoorMap: {},
-      skyColor: {},
-      mask: {},
     },
     data() {
       return {
         map: undefined,
-        attrs: {},
       }
     },
     computed: {
       optionsProps() {
-        const { width, height, events, ...options } = this.$props
+        const { width, height, events, ...options } = this.$attrs
         for (const i in options) {
           if (!options[i]) {
             delete options[i]
@@ -94,10 +60,11 @@
               return name.slice(0, 1).toUpperCase() + name.slice(1)
             }
 
-            let handleFun = this.map[`set${ camelCase(prop) }`]
-            if (handleFun) {
-              const unwatchFn = this.$watch(prop, now => {
-                handleFun(now)
+            let handleFn = this.map[`set${ camelCase(prop) }`]
+
+            if (handleFn) {
+              const unwatchFn = this.$watch(`$attrs.${ prop }`, (now) => {
+                handleFn.call(this.map, now) // 指定this为map
               })
               this.$once('hook:destroy', () => {
                 unwatchFn()
