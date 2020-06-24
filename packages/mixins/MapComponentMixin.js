@@ -12,6 +12,7 @@ export default {
     this.getMap(async map => {
       this.installComponent && await this.installComponent(map)
       this.bindEvents()
+      this.setPropWatchers()
       this.uninstallComponent && this.$once('hook:destroy', () => {
         this.uninstallComponent(map)
       })

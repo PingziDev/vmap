@@ -16,11 +16,11 @@ export default ({
       window.global = window
     }
     // import('@vita2333/vmap').then((VueAmapLoader) => {
-    import('../../packages').then((VueAmapLoader) => {
-      console.log('vueAmapLoaderDefaultVersion======================')
-      console.log(VueAmapLoader.default.version)
-      Vue.use(VueAmapLoader.default || VueAmapLoader, AMapConfig)
-    })
+      import('../../packages').then((VueAmapLoader) => {
+        console.log('vueAmapLoaderDefaultVersion======================')
+        console.log(VueAmapLoader.default.version)
+        Vue.use(VueAmapLoader.default || VueAmapLoader, AMapConfig)
+      })
     /**
      * 注册所有component
      */

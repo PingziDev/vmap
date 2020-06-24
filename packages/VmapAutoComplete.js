@@ -5,8 +5,11 @@ export default {
   mixins: [MapComponentMixin],
   methods: {
     installComponent(map) {
-      map.plugin(['AMap.Autocomplete'], function () {
-        this.component = new AMap.AutoComplete(this.mapOptions)
+      return new Promise(resolve => {
+        map.plugin(['AMap.AutoComplete'], () => {
+          this.mapComponent = new AMap.AutoComplete(this.mapOptions)
+          resolve()
+        })
       })
     },
     uninstallComponent(map) {},
