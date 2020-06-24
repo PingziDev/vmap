@@ -8,8 +8,8 @@
 			</label>
 		</div>
 		<vmap :center="position" :resizeEnable="true">
-			<vmap-geolocation @complete="onGetCurrentPosition"
-			                  v-bind="locationOptions"></vmap-geolocation>
+			<vmap-tool-bar position="RT"></vmap-tool-bar>
+			<vmap-geolocation @complete="onGetCurrentPosition" v-bind="locationOptions"></vmap-geolocation>
 			<vmap-auto-complete @select="onSelect" input="tipinput"></vmap-auto-complete>
 		</vmap>
 	</div>
