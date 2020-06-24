@@ -48,24 +48,26 @@ export default {
             return name.slice(0, 1).toUpperCase() + name.slice(1)
           }
 
-          let handleFn
-          if (this[`set${ prop }`]) {
-            handleFn = this[`set${ prop }`]
+          const defaultSetter = `set${ _upperFirst(prop) }`
+          let setterFn
+          if (this[defaultSetter]) {
+            setterFn = this[defaultSetter]
           } else {
-            handleFn = this.mapComponent[`set${ _upperFirst(prop) }`]
+            setterFn = this.mapComponent[defaultSetter]
           }
-          if (handleFn) {
+          if (setterFn) {
             const unwatchFn = this.$watch(() => {
               return this.$attrs[prop]
             }, (now) => {
-              handleFn.call(this.mapComponent, now) // 指定this为map
+              setterFn.call(this.mapComponent, now) // 指定this为map
             })
             this.$once('hook:destroy', () => {
               unwatchFn()
             })
-          } else {
-            throw new Error('no handle function for ' + prop)
           }
+          // else {
+          //   throw new Error('no handle function for ' + prop)
+          // }
         })
       }
     },

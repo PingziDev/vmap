@@ -11,7 +11,12 @@ export default ({
   isServer, // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
   if (!isServer) {
-    import('@vita2333/vmap').then((VueAmapLoader) => {
+    // fix global is not defined
+    if (!window.global) {
+      window.global = window
+    }
+    // import('@vita2333/vmap').then((VueAmapLoader) => {
+    import('../../packages').then((VueAmapLoader) => {
       console.log('vueAmapLoaderDefaultVersion======================')
       console.log(VueAmapLoader.default.version)
       Vue.use(VueAmapLoader.default || VueAmapLoader, AMapConfig)

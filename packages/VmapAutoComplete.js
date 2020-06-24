@@ -2,7 +2,7 @@ import MapComponentMixin from './mixins/MapComponentMixin'
 
 export default {
   name: 'VmapAutoComplete',
-  mixin: [MapComponentMixin],
+  mixins: [MapComponentMixin],
   methods: {
     installComponent(map) {
       map.plugin(['AMap.Autocomplete'], function () {

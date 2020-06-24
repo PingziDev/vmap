@@ -46,6 +46,28 @@
         }
         _checkForMap()
       },
+      // handlers
+      setResizeEnable(val) {
+        this.mapComponent.setStatus({ resizeEnable: val })
+      },
+      setDragEnable(val) {
+        this.mapComponent.setStatus({ dragEnable: val })
+      },
+      setKeyboardEnable(val) {
+        this.mapComponent.setStatus({ keyboardEnable: val })
+      },
+      setDoubleClickZoom(val) {
+        this.mapComponent.setStatus({ doubleClickZoom: val })
+      },
+      setZoomEnable(val) {
+        this.mapComponent.setStatus({ zoomEnable: val })
+      },
+      setRotateEnable(val) {
+        this.mapComponent.setStatus({ rotateEnable: val })
+      },
+      setScrollWheel(val) {
+        this.mapComponent.setStatus({ scrollWheel: val })
+      },
     },
     provide() {
       return {
