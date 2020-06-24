@@ -1,21 +1,16 @@
 const { run } = require('runjs')
 const glob = require('glob')
 
-const list =
-  {
-    index: {
-      input: 'packages/index.js',
-      output: 'index',
-    },
-  }
+const list = {}
 
-// glob.sync('./packages/*/index.js').forEach(path => {
-//   const chunk = path.split('packages/')[1].split('/index')[0]
-//   list[chunk] = {
-//     input: `packages/${ chunk }/index.js`,
-//     output: chunk,
-//   }
-// })
+glob.sync('./packages/*.*').forEach(path => {
+  const chunk = path.split('packages/')[1].split('/index')[0]
+
+  list[chunk] = {
+    input: `packages/${ chunk }`,
+    output: chunk.split('.')[0],
+  }
+})
 
 Object.keys(list).forEach(i => {
   const { input, output } = list[i]
