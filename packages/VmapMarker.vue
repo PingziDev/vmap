@@ -1,42 +1,23 @@
 <script>
+  import MapMixin from './mixins/MapMixin'
+  import MapComponentMixin from './mixins/MapComponentMixin'
+
   export default {
     name: 'VmapMarker',
-    props: [
-      // event
-      'events',
-    ],
-    data() {
-      return {
-        marker: undefined,
-      }
-    },
-    computed: {
-      optionsProps() {
-        let { ...options } = this.$attrs
-        for (const i in options) {
-          if (!options[i]) {
-            delete options[i]
-          }
-        }
-        return Object.keys(options).length > 0 ? options : undefined
-      },
-    },
+    mixins: [MapMixin, MapComponentMixin],
     mounted() {
       this.getMap(map => {
-        this.marker = new AMap.Marker(this.optionsProps)
-        map.add(this.marker)
+        this.mapComponent = new AMap.Marker(this.optionsProps)
+        map.add(this.mapComponent)
       })
     },
     destroyed() {
-      this.marker && this.getMap(map => {
-        map.remove(this.marker)
+      this.mapComponent && this.getMap(map => {
+        map.remove(this.mapComponent)
       })
     },
     methods: {},
-    inject: ['getMap'],
-    render(createElement, context) {
-      return null
-    },
+
   }
 </script>
 

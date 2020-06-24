@@ -57,9 +57,9 @@ describe('props', () => {
 })
 
 describe('data', () => {
-  it('should set map', async () => {
+  it('should set mapComponent', async () => {
     await flushPromises()
-    expect(wrapper.vm.$data.map).toBeDefined()
+    expect(wrapper.vm.$data.mapComponent).toBeDefined()
   })
 })
 
