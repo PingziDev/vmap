@@ -1,11 +1,11 @@
 <template>
-	<demo-block>
+	<div>
 		<div class="flex-wrapper">
 		</div>
 		<vmap>
 			<vmap-marker :key="index" v-bind="marker" v-for="(marker,index) in markers"/>
 		</vmap>
-	</demo-block>
+	</div>
 </template>
 
 <script>

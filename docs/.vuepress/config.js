@@ -11,11 +11,13 @@ module.exports = {
     sidebar: {
       '/introduction/': [
         {
-          title: '起步',
+          title: '快速上手',
           collapsable: false,
           children: [
             { title: '安装', path: 'install' },
-            { title: '快速上手', path: 'quick-start' },
+            { title: '地图示例', path: 'map-demo' },
+            { title: '标记示例', path: 'marker-demo' },
+            { title: '地址搜索示例', path: 'search-demo' },
           ],
         },
       ],

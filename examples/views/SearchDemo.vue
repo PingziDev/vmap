@@ -1,14 +1,14 @@
 <template>
-	<demo-block>
+	<div>
 		<div class="flex-wrapper">
-			<label>关键字
+			<label>地址搜索
 				<input id="tipinput" type="text" v-model="searchText">
 			</label>
 		</div>
-		<vmap :resizeEnable="true">
+		<vmap :center="[lng,lat]" :resizeEnable="true">
 			<vmap-auto-complete input="tipinput"></vmap-auto-complete>
 		</vmap>
-	</demo-block>
+	</div>
 </template>
 
 <script>
@@ -18,6 +18,8 @@
     data() {
       return {
         searchText: '',
+        lng: '',
+        lat: '',
       }
     },
 
