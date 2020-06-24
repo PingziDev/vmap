@@ -1,3 +1,4 @@
+<ClientOnly>
 <DemoBlock title="测试" desc="基础文档展示">
   <base-demo/>
 
@@ -11,6 +12,7 @@
    
   </div>
 </DemoBlock>
+</ClientOnly>
 
 <script>
   export default {
