@@ -22,7 +22,11 @@ export default {
     // todo 简化写法
     getCurrentPosition() {
       this.mapComponent.getCurrentPosition((status, result) => {
-        this.$emit('getCurrentPosition', status, result)
+        if (status === 'complete') {
+          this.$emit('complete', result)
+        } else {
+          this.$emit('error', result)
+        }
       })
     },
     getCityInfo() {
