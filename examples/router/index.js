@@ -28,6 +28,12 @@ export const demos = [
     component: () => import(/* webpackChunkName: "demo" */ '../views/SearchDemo'),
     meta: { title: '地址搜索' },
   },
+  {
+    path: '/LocationDemo',
+    name: 'LocationDemo',
+    component: () => import(/* webpackChunkName: "demo" */ '../views/LocationDemo'),
+    meta: { title: '定位' },
+  },
 ]
 
 
