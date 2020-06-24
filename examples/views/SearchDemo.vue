@@ -2,10 +2,10 @@
 	<div>
 		<div class="flex-wrapper">
 			<label>地址搜索
-				<input id="tipinput" type="text" v-model="searchText">
+				<input id="tipinput" type="text">
 			</label>
 		</div>
-		<vmap :center="center" :resizeEnable="true">
+		<vmap :center="center" :resizeEnable="true" zoom="20">
 			<vmap-auto-complete @select="onSelect" input="tipinput"></vmap-auto-complete>
 		</vmap>
 	</div>
@@ -17,7 +17,6 @@
     name: 'SearchDemo',
     data() {
       return {
-        searchText: '',
         center: undefined,
       }
     },
@@ -25,7 +24,7 @@
       onSelect(event) {
         console.log('event======================')
         console.log(event)
-
+        this.center = [event.poi.location.lng, event.poi.location.lat]
       },
     },
   }
