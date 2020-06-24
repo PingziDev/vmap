@@ -1,18 +1,12 @@
 <template>
-  <div>
-    <label>
-      经度
-      <input type="number" v-model="lng">
-    </label>
-    <label>
-      纬度
-      <input type="number" v-model="lat">
-    </label>
-    <label>zoom
-      <input type="number" v-model="zoom">
-    </label>
-    <vmap :center="[lng,lat]" :zoom="zoom" @click="click" @complete="complete" height="300px" width="300px"></vmap>
-  </div>
+	<div>
+		<div class="flex-wrapper">
+			<label>经度<input type="number" v-model="lng"></label>
+			<label>纬度<input type="number" v-model="lat"></label>
+			<label>缩放<input type="number" v-model="zoom"></label>
+		</div>
+		<vmap :center="[lng,lat]" :zoom="zoom" @click="click" @complete="complete" height="300px" width="300px"></vmap>
+	</div>
 </template>
 
 
@@ -27,12 +21,11 @@
       }
     },
     methods: {
-      click: (data) => {
-        console.log('click map===')
-        console.log(data)
-      },
       complete: () => {
-        console.log('complete map=========')
+        console.log('地图加载完成')
+      },
+      click: (data) => {
+        alert('点击地图')
       },
     },
   }

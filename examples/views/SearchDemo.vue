@@ -1,7 +1,10 @@
 <template>
 	<demo-block>
-		<button @click="showPlugin=!showPlugin">显示缩放</button>
-		<input id="tipinput" type="text" v-model="searchText">
+		<div class="flex-wrapper">
+			<label>关键字
+				<input id="tipinput" type="text" v-model="searchText">
+			</label>
+		</div>
 		<vmap :resizeEnable="true">
 			<vmap-auto-complete input="tipinput"></vmap-auto-complete>
 		</vmap>

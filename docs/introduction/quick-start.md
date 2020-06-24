@@ -1,10 +1,6 @@
 <ClientOnly>
-<DemoBlock title="测试" desc="基础文档展示">
-  <base-demo/>
-
-  <template slot="codeDesc">
-   按钮实体
-  </template>
+<DemoBlock title="地图" desc="使用示例">
+  <BaseDemo/>
 
   <div slot="code">
 
@@ -12,6 +8,26 @@
    
   </div>
 </DemoBlock>
+<DemoBlock title="地图标记" desc="使用示例">
+  <MarkerDemo/>
+
+  <div slot="code">
+
+   <<< @/examples/views/MarkerDemo.vue
+   
+  </div>
+</DemoBlock>
+
+<DemoBlock title="定位" desc="使用示例">
+  <SearchDemo/>
+
+  <div slot="code">
+
+   <<< @/examples/views/SearchDemo.vue
+   
+  </div>
+</DemoBlock>
+
 </ClientOnly>
 
 <script>
