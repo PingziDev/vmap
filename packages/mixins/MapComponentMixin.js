@@ -3,15 +3,15 @@
  * installComponent(map)
  * uninstallComponent(map)
  */
+import MapMixin from './MapMixin'
+
 export default {
-  props: [
-    // event
-    'events',
-  ],
+  ...MapMixin,
   inject: ['getMap'],
   mounted() {
-    this.getMap(map => {
-      this.installComponent && this.installComponent(map)
+    this.getMap(async map => {
+      this.installComponent && await this.installComponent(map)
+      this.bindEvents()
       this.uninstallComponent && this.$once('hook:destroy', () => {
         this.uninstallComponent(map)
       })
@@ -19,5 +19,5 @@ export default {
   },
   render(createElement, context) {
     return null
-  },
+  }
 }

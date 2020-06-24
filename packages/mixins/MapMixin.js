@@ -1,11 +1,12 @@
 export default {
+  inheritAttrs: false,
   data() {
     return {
       mapComponent: undefined,
     }
   },
   computed: {
-    optionsProps() {
+    mapOptions() {
       const { width, height, events, ...options } = this.$attrs
       for (const i in options) {
         if (!options[i]) {
@@ -16,6 +17,13 @@ export default {
     },
   },
   methods: {
+    bindEvents() {
+      if (Object.keys(this.$listeners).length > 0) {
+        for (const eventName in this.$listeners) {
+          this.mapComponent.on(eventName, this.$listeners[eventName])
+        }
+      }
+    },
     /**
      * 作为$attrs传入的参数会被$watch()跟踪,发生改变时默认会调用this.map.setXXX()方法处理,如果参数的setter不符合这种格式,需要在Vue中定义setXXX()方法
      * 例如:
@@ -34,9 +42,9 @@ export default {
      * ```
      */
     setPropWatchers() {
-      if (this.optionsProps) {
-        Object.keys(this.optionsProps).forEach(prop => {
-          function _camelCase(name) {
+      if (this.mapOptions) {
+        Object.keys(this.mapOptions).forEach(prop => {
+          function _upperFirst(name) {
             return name.slice(0, 1).toUpperCase() + name.slice(1)
           }
 
@@ -44,7 +52,7 @@ export default {
           if (this[`set${ prop }`]) {
             handleFn = this[`set${ prop }`]
           } else {
-            handleFn = this.mapComponent[`set${ _camelCase(prop) }`]
+            handleFn = this.mapComponent[`set${ _upperFirst(prop) }`]
           }
           if (handleFn) {
             const unwatchFn = this.$watch(() => {

@@ -29,19 +29,12 @@
     methods: {
       async installMap() {
         global.AMap = await this.$amapLoader()
-        this.$set(this, 'mapComponent', new AMap.Map(this.$refs.container, this.optionsProps))
-        this._bindEvents()
+        this.$set(this, 'mapComponent', new AMap.Map(this.$refs.container, this.mapOptions))
+        this.bindEvents()
         this.setPropWatchers()
       },
       uninstallMap() {
         this.mapComponent.destroy()
-      },
-      _bindEvents() {
-        if (Object.keys(this.$listeners).length > 0) {
-          for (const eventName in this.$listeners) {
-            this.mapComponent.on(eventName, this.$listeners[eventName])
-          }
-        }
       },
       getMap(callback) {
         const _checkForMap = () => {
@@ -59,6 +52,5 @@
         getMap: this.getMap,
       }
     },
-
   }
 </script>

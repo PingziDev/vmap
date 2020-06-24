@@ -5,8 +5,8 @@
 				<input id="tipinput" type="text" v-model="searchText">
 			</label>
 		</div>
-		<vmap :center="[lng,lat]" :resizeEnable="true">
-			<vmap-auto-complete input="tipinput"></vmap-auto-complete>
+		<vmap :center="center" :resizeEnable="true">
+			<vmap-auto-complete @select="onSelect" input="tipinput"></vmap-auto-complete>
 		</vmap>
 	</div>
 </template>
@@ -18,11 +18,16 @@
     data() {
       return {
         searchText: '',
-        lng: '',
-        lat: '',
+        center: undefined,
       }
     },
+    methods: {
+      onSelect(event) {
+        console.log('event======================')
+        console.log(event)
 
+      },
+    },
   }
 </script>
 

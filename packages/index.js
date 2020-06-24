@@ -2,6 +2,7 @@ import Vmap from './Vmap'
 import VmapMarker from './VmapMarker'
 import AMapLoader from '@amap/amap-jsapi-loader'
 import VmapAutoComplete from './VmapAutoComplete'
+import { version } from './../package.json'
 
 const components = [Vmap, VmapMarker, VmapAutoComplete]
 const install = ((
@@ -11,5 +12,6 @@ const install = ((
 })
 
 export default {
+  version,
   install,
 }

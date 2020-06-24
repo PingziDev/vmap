@@ -15,6 +15,8 @@ class mockClass {
 
   }
 
+  setZoom() {}
+
   on(name) {
 
   }
@@ -46,13 +48,13 @@ describe('load map', () => {
 describe('props', () => {
 
   it('should be undefined when no props', () => {
-    expect((wrapper.vm).filterProps).toBeUndefined()
+    expect((wrapper.vm).mapOptions).toBeUndefined()
   })
   it('should render props', () => {
     const wrapper = mount(VueAmap, {
       localVue, propsData: { zoom: 20 },
     })
-    expect((wrapper.vm).optionsProps.zoom).toEqual(20)
+    expect((wrapper.vm).mapOptions.zoom).toEqual(20)
   })
 })
 

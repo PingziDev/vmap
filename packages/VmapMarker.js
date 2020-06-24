@@ -1,12 +1,11 @@
-import MapMixin from './mixins/MapMixin'
 import MapComponentMixin from './mixins/MapComponentMixin'
 
 export default {
   name: 'VmapMarker',
-  mixins: [MapMixin, MapComponentMixin],
+  mixins: [MapComponentMixin],
   methods: {
     installComponent(map) {
-      this.mapComponent = new AMap.Marker(this.optionsProps)
+      this.mapComponent = new AMap.Marker(this.mapOptions)
       map.add(this.mapComponent)
     },
     uninstallComponent(map) {

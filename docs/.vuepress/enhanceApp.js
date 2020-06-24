@@ -12,6 +12,8 @@ export default ({
 }) => {
   if (!isServer) {
     import('@vita2333/vmap').then((VueAmapLoader) => {
+      console.log('vueAmapLoaderDefaultVersion======================')
+      console.log(VueAmapLoader.default.version)
       Vue.use(VueAmapLoader.default || VueAmapLoader, AMapConfig)
     })
     /**
