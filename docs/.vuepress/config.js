@@ -19,6 +19,7 @@ module.exports = {
             { title: '标记示例', path: 'marker-demo' },
             { title: '地址搜索示例', path: 'search-demo' },
             { title: '定位示例', path: 'location-demo' },
+            { title: '综合示例', path: 'composite-demo' },
           ],
         },
       ],
