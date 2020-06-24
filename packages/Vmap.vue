@@ -21,17 +21,20 @@
       events: { type: Object },
     },
     mounted() {
-      this._initMap()
+      this.installMap()
+      this.$once('hook:destroy', () => {
+        this.uninstallMap()
+      })
     },
     methods: {
-      async _initMap() {
+      async installMap() {
         global.AMap = await this.$amapLoader()
         this.$set(this, 'mapComponent', new AMap.Map(this.$refs.container, this.optionsProps))
         this._bindEvents()
         this._setPropWatchers()
-        this.$once('hook:destroy', () => {
-          this.mapComponent.destroy()
-        })
+      },
+      uninstallMap() {
+        this.mapComponent.destroy()
       },
       _bindEvents() {
         if (Object.keys(this.$listeners).length > 0) {
@@ -59,8 +62,3 @@
 
   }
 </script>
-
-
-<style scoped>
-
-</style>

@@ -1,3 +1,4 @@
+
 export default {
   data() {
     return {
@@ -32,6 +33,8 @@ export default {
             this.$once('hook:destroy', () => {
               unwatchFn()
             })
+          } else {
+            throw new Error('no handle function for ' + prop)
           }
         })
       }
