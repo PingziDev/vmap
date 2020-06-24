@@ -31,7 +31,7 @@
         global.AMap = await this.$amapLoader()
         this.$set(this, 'mapComponent', new AMap.Map(this.$refs.container, this.optionsProps))
         this._bindEvents()
-        this._setPropWatchers()
+        this.setPropWatchers()
       },
       uninstallMap() {
         this.mapComponent.destroy()
