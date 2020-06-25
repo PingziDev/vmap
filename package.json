@@ -11,7 +11,7 @@
     "examples:serve": "vue-cli-service serve",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn run docs:build & git subtree pushh --prefix .vuepress/dist origin gh-pages"
+    "docs:deploy": "git subtree push --prefix .vuepress/dist origin gh-pages"
   },
   "main": "lib/index.umd.js",
   "files": [
