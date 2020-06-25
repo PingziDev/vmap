@@ -9,7 +9,7 @@ export default {
     mapOptions() {
       const { width, height, events, ...options } = this.$attrs
       for (const i in options) {
-        if (!options[i]) {
+        if (options[i] === undefined) {
           delete options[i]
         }
       }
