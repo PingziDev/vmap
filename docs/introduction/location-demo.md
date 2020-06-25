@@ -15,3 +15,8 @@
   export default {
   }
 </script>
+
+## props
+| prop | definition | default |
+|:----:|:----------:|:-------:|
+| initPosition | 初始化时是否获取当前地址 | undefined | 

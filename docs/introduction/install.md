@@ -35,3 +35,10 @@ Vue.use(Vmap, {
   }
 </script>
 ```
+
+## 直接获取AMap
+```javascript
+this.$amapLoader().then(AMap=>{
+    // 处理后续
+})
+```

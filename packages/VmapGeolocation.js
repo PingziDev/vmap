@@ -3,15 +3,15 @@ import MapComponentMixin from './mixins/MapComponentMixin'
 export default {
   name: 'VmapGeolocation',
   mixins: [MapComponentMixin],
+  props: ['initPosition'],
   computed: {},
   methods: {
-
     installComponent(map) {
       return new Promise(resolve => {
         map.plugin(['AMap.Geolocation'], () => {
           this.mapComponent = new AMap.Geolocation(this.mapOptions)
           map.addControl(this.mapComponent)
-          this.getCurrentPosition()
+          this.initPosition && this.getCurrentPosition()
           resolve()
         })
       })
@@ -23,11 +23,7 @@ export default {
     // todo 简化写法
     getCurrentPosition() {
       this.mapComponent.getCurrentPosition((status, result) => {
-        if (status === 'complete') {
-          this.$emit('complete', result)
-        } else {
-          this.$emit('error', result)
-        }
+        this.$emit('getCurrentPosition', status, result)
       })
     },
     getCityInfo() {

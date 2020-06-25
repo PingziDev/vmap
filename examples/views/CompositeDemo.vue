@@ -7,9 +7,9 @@
 				<input id="tipinput" type="text">
 			</label>
 		</div>
-		<vmap :center="position" :resizeEnable="true">
+		<vmap :center="position" :resizeEnable="true" @dragend="onDragend">
 			<vmap-tool-bar position="RT"></vmap-tool-bar>
-			<vmap-geolocation @complete="onGetCurrentPosition" v-bind="locationOptions"></vmap-geolocation>
+			<vmap-geolocation @getCurrentPosition="onGetCurrentPosition" v-bind="locationOptions"></vmap-geolocation>
 			<vmap-auto-complete @select="onSelect" input="tipinput"></vmap-auto-complete>
 		</vmap>
 	</div>
@@ -49,12 +49,22 @@
         this.position = [event.poi.location.lng, event.poi.location.lat]
         this.address = event.poi.district + event.poi.address + event.poi.name
       },
-      onGetCurrentPosition(result) {
-        console.log('result======================')
-        console.log(result)
+      onGetCurrentPosition(status, result) {
+        if (status === 'complete') {
+          console.log('result======================')
+          console.log(result)
+          console.log('======================')
+          this.position = [result.position.lng, result.position.lat]
+          this.address = result.formattedAddress
+        } else {
+          throw new Error('定位失败:' + result)
+        }
+      },
+      onDragend(event) {
         console.log('======================')
-        this.position = [result.position.lng, result.position.lat]
-        this.address = result.formattedAddress
+        console.log(event) // todo
+        console.log('======================')
+
       },
     },
   }
