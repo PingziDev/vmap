@@ -11,8 +11,11 @@
 
 
 <script>
+  import { Vmap } from '@vita2333/vmap'
+
   export default {
     name: 'BaseDemo',
+    components: { Vmap },
     data() {
       return {
         zoom: 10,

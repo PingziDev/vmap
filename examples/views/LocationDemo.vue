@@ -8,8 +8,11 @@
 </template>
 
 <script>
+  import { Vmap, VmapGeolocation } from '@vita2333/vmap'
+
   export default {
     name: 'LocationDemo',
+    components: { Vmap, VmapGeolocation },
     data() {
       return {
         position: undefined,

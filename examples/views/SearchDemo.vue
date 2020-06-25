@@ -12,8 +12,11 @@
 </template>
 
 <script>
+  import { Vmap, VmapAutoComplete } from '@vita2333/vmap'
+
   export default {
     name: 'SearchDemo',
+    components: { VmapAutoComplete, Vmap },
     data() {
       return {
         center: undefined,

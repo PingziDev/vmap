@@ -9,8 +9,11 @@
 </template>
 
 <script>
+  import { Vmap, VmapMarker } from '@vita2333/vmap'
+
   export default {
     name: 'MarkerDemo',
+    components: { VmapMarker, Vmap },
     data() {
       return {
         markers: [

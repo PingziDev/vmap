@@ -5,6 +5,7 @@ export default {
   mixins: [MapComponentMixin],
   computed: {},
   methods: {
+
     installComponent(map) {
       return new Promise(resolve => {
         map.plugin(['AMap.Geolocation'], () => {

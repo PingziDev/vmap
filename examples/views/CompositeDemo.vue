@@ -16,8 +16,11 @@
 </template>
 
 <script>
+  import { Vmap, VmapAutoComplete, VmapGeolocation, VmapToolBar } from '@vita2333/vmap'
+
   export default {
     name: 'CompositeDemo',
+    components: { VmapAutoComplete, VmapGeolocation, VmapToolBar, Vmap },
     data() {
       return {
         position: undefined,
