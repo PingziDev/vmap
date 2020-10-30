@@ -46,3 +46,14 @@ Vue.use(Vmap, {
 ```
 npm link @vita2333/vmap          
 ```
+`package.json`下`scripts`
+```javascript
+    "libs:build"  // 打包本项目核心libs 
+    "docs:dev"  //  开发文档 
+    "docs:build"  // 
+    "docs:deploy"  // 
+    "examples:serve"  // 组件示例
+    "examples:build"  // 
+    "examples:lint"  // 
+    "test:unit"  // 
+```
