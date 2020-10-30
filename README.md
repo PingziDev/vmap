@@ -39,3 +39,10 @@ Vue.use(Vmap, {
 
 ## 文档
 [使用文档](https://vita2333.github.io/vmap/)
+
+
+## 组件开发
+关联本地项目到@node_modules/下
+```
+npm link @vita2333/vmap          
+```

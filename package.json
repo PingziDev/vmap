@@ -4,14 +4,14 @@
   "version": "0.1.4",
   "private": false,
   "scripts": {
-    "test:unit": "vue-cli-service test:unit --require tests/setup.js",
     "libs:build": "node ./build/build-libs.js",
-    "examples:build": "vue-cli-service build",
-    "examples:lint": "vue-cli-service lint",
-    "examples:serve": "vue-cli-service serve",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "git subtree push --prefix docs/.vuepress/dist origin gh-pages"
+    "docs:deploy": "git subtree push --prefix docs/.vuepress/dist origin gh-pages",
+    "examples:serve": "vue-cli-service serve",
+    "examples:build": "vue-cli-service build",
+    "examples:lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit --require tests/setup.js"
   },
   "main": "lib/index.umd.js",
   "files": [
@@ -34,6 +34,7 @@
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "@vue/test-utils": "^1.0.3",
+    "babel-plugin-import": "^1.13.0",
     "chai": "^4.1.2",
     "expect": "^26.0.1",
     "flush-promises": "^1.0.2",
@@ -49,8 +50,7 @@
     "simple-mock": "^0.8.0",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.5.2",
-    "vuex": "^3.4.0",
-    "babel-plugin-import": "^1.13.0"
+    "vuex": "^3.4.0"
   },
   "license": "MIT",
   "types": "types/index.d.ts"
